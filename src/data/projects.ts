@@ -36,7 +36,11 @@ export type ProjectCategory =
   | "Concrete Grinding & Polishing"
   | "Building Repair & Retrofitting"
   | "Grouting"
-  | "Roof & Deck Insulation";
+  | "Roof & Deck Insulation"
+  | "Gyproc Plastering"
+  | "Tiles Epoxy"
+  | "Gyproc Ceiling"
+  | "Partition Walls & Boards";
 
 export type ProjectStatus = "completed" | "ongoing";
 
