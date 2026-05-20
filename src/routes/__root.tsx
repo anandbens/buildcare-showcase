@@ -110,6 +110,8 @@ function RootComponent() {
           </main>
           <Footer />
           <FloatingEnquiryButton />
+          <FloatingContactMenu />
+
         </div>
       </EnquiryProvider>
     </QueryClientProvider>
