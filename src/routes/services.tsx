@@ -294,6 +294,7 @@ function ServicesPage() {
           {CATEGORIES.map((c, i) => {
             const detail = SERVICE_DETAILS[c];
             const proj = PROJECTS.find((p) => p.category === c);
+            const image = proj?.image ?? SERVICE_FALLBACK_IMAGES[c];
             const reverse = i % 2 === 1;
             const Icon = SERVICE_ICONS[c] ?? Layers;
             return (
@@ -313,10 +314,11 @@ function ServicesPage() {
                       } hidden md:block h-full w-full rounded-[28px] bg-gradient-to-br from-slate-200/70 to-slate-100/40 -z-10`}
                     />
                     <div className="relative overflow-hidden rounded-[28px] aspect-[4/3] shadow-[0_30px_60px_-24px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/60">
-                      {proj && (
+                      {image && (
                         <img
-                          src={proj.image}
+                          src={image}
                           alt={c}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.1]"
                         />
                       )}
