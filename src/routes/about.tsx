@@ -346,38 +346,64 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* CINEMATIC CTA */}
-      <section className="relative py-28 overflow-hidden bg-[#0a1020] text-primary-foreground">
-        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:56px_56px]" />
-        <div className="absolute -top-20 -left-20 h-96 w-96 bg-brand/25 blur-[140px] rounded-full animate-pulse" />
-        <div className="absolute -bottom-20 -right-20 h-96 w-96 bg-brand/20 blur-[140px] rounded-full" />
-        <div className="container-x relative text-center max-w-3xl mx-auto">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand">
-            <span className="h-px w-8 bg-brand" /> Let's collaborate
-          </p>
-          <h2 className="mt-5 text-4xl md:text-6xl font-bold leading-tight">
-            Let's build something{" "}
-            <span className="bg-gradient-brand bg-clip-text text-transparent">that lasts.</span>
-          </h2>
-          <p className="mt-5 text-lg text-primary-foreground/75 max-w-xl mx-auto">
-            Talk to our civil engineers about your project specification — site visit, scope review
-            and proposal within 48 hours.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild variant="brand" size="lg" className="group shadow-brand">
-              <Link to="/contact">
-                Get in touch
-                <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white/30 bg-white/5 backdrop-blur-md text-primary-foreground hover:bg-white/10 hover:text-primary-foreground"
-            >
-              <Link to="/projects">View our projects</Link>
-            </Button>
+      {/* ========== CTA ========== */}
+      <section className="pb-24 pt-8 md:pt-16">
+        <div className="container-x">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#0a1020] p-8 sm:p-10 md:p-16 text-white shadow-[0_40px_80px_-30px_rgba(15,23,42,0.5)] fade-in-up">
+            {/* Background image overlay */}
+            <div className="absolute inset-0 opacity-20">
+              <img src={heroCover} alt="" className="h-full w-full object-cover animate-kenburns" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a1020]/95 via-[#0a1020]/85 to-[#0a1020]/60" />
+
+            {/* Grid texture */}
+            <div
+              className="absolute inset-0 opacity-[0.08] pointer-events-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+
+            {/* Glows */}
+            <div className="absolute -top-32 -right-32 h-[400px] w-[400px] rounded-full bg-[#f59e3a]/30 blur-[120px] animate-pulse" />
+            <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-[#3b6fa0]/30 blur-[100px]" />
+
+            <Quote className="absolute top-6 left-6 h-24 w-24 text-white/5" />
+
+            <div className="relative grid lg:grid-cols-5 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-3">
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#f59e3a]">
+                  <span className="h-px w-8 bg-[#f59e3a]" /> Let's collaborate
+                </span>
+                <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-[1.05]">
+                  Let's build something{" "}
+                  <span className="bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                    that lasts.
+                  </span>
+                </h2>
+                <p className="mt-5 text-white/70 text-base sm:text-lg leading-relaxed max-w-xl">
+                  Talk to our civil engineers about your project specification — site visit, scope
+                  review and proposal within 48 hours.
+                </p>
+              </div>
+              <div className="lg:col-span-2 flex flex-wrap gap-3 lg:justify-end">
+                <button
+                  onClick={() => open()}
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f59e3a] to-[#e07016] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_20px_50px_-12px_rgba(245,158,58,0.6)] transition-all hover:shadow-[0_25px_60px_-10px_rgba(245,158,58,0.8)] hover:-translate-y-0.5"
+                >
+                  Start your enquiry
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </button>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-xl ring-1 ring-white/20 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/10 hover:ring-white/30 hover:-translate-y-0.5 transition-all"
+                >
+                  View our projects
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
