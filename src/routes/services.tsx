@@ -3,6 +3,10 @@ import { useState } from "react";
 import { CATEGORIES, PROJECTS } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
+import gyprocPlasteringImg from "@/assets/projects/gyproc-plastering.jpg";
+import tilesEpoxyImg from "@/assets/projects/tiles-epoxy.jpg";
+import gyprocCeilingImg from "@/assets/projects/gyproc-ceiling.jpg";
+import partitionWallsImg from "@/assets/projects/partition-walls.jpg";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -17,6 +21,10 @@ import {
   Construction,
   Thermometer,
   Layers3,
+  Paintbrush,
+  Grid3x3,
+  PanelTop,
+  Columns3,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
@@ -115,6 +123,46 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Moisture barriers and fastening details",
     ],
   },
+  "Gyproc Plastering": {
+    intro:
+      "Premium Gyproc plastering solutions for smooth, durable, and crack-resistant wall finishes across residential, commercial, and industrial projects.",
+    bullets: [
+      "Smooth wall finishing systems",
+      "Crack-resistant plaster applications",
+      "Lightweight surface solutions",
+      "Fast-track interior finishing systems",
+    ],
+  },
+  "Tiles Epoxy": {
+    intro:
+      "High-performance tile epoxy solutions designed for superior bonding, waterproofing, chemical resistance, and long-lasting floor durability.",
+    bullets: [
+      "Epoxy tile joint filling",
+      "Chemical-resistant epoxy systems",
+      "Waterproof tile applications",
+      "Industrial and commercial flooring solutions",
+    ],
+  },
+  "Gyproc Ceiling": {
+    intro:
+      "Modern Gyproc ceiling systems engineered for elegant interiors, acoustic comfort, and seamless architectural finishes.",
+    bullets: [
+      "False ceiling installations",
+      "Acoustic ceiling systems",
+      "Moisture-resistant ceiling panels",
+      "Decorative and designer ceiling solutions",
+    ],
+  },
+  "Partition Walls & Boards": {
+    intro:
+      "Lightweight partition wall and board systems for efficient space division, modern interiors, and flexible commercial layouts.",
+    bullets: [
+      "Gypsum partition wall systems",
+      "Drywall board installations",
+      "Acoustic partition solutions",
+      "Modular interior wall systems",
+    ],
+  },
 };
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -126,6 +174,17 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "Building Repair & Retrofitting": Construction,
   Grouting: Wrench,
   "Roof & Deck Insulation": Thermometer,
+  "Gyproc Plastering": Paintbrush,
+  "Tiles Epoxy": Grid3x3,
+  "Gyproc Ceiling": PanelTop,
+  "Partition Walls & Boards": Columns3,
+};
+
+const SERVICE_FALLBACK_IMAGES: Record<string, string> = {
+  "Gyproc Plastering": gyprocPlasteringImg,
+  "Tiles Epoxy": tilesEpoxyImg,
+  "Gyproc Ceiling": gyprocCeilingImg,
+  "Partition Walls & Boards": partitionWallsImg,
 };
 
 function ServicesPage() {
@@ -235,6 +294,7 @@ function ServicesPage() {
           {CATEGORIES.map((c, i) => {
             const detail = SERVICE_DETAILS[c];
             const proj = PROJECTS.find((p) => p.category === c);
+            const image = proj?.image ?? SERVICE_FALLBACK_IMAGES[c];
             const reverse = i % 2 === 1;
             const Icon = SERVICE_ICONS[c] ?? Layers;
             return (
@@ -254,10 +314,11 @@ function ServicesPage() {
                       } hidden md:block h-full w-full rounded-[28px] bg-gradient-to-br from-slate-200/70 to-slate-100/40 -z-10`}
                     />
                     <div className="relative overflow-hidden rounded-[28px] aspect-[4/3] shadow-[0_30px_60px_-24px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/60">
-                      {proj && (
+                      {image && (
                         <img
-                          src={proj.image}
+                          src={image}
                           alt={c}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.1]"
                         />
                       )}
