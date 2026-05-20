@@ -33,7 +33,7 @@ export function FloatingContactMenu() {
   ];
 
   return (
-    <div className="fixed right-3 sm:right-4 top-1/2 z-50 -translate-y-1/2 flex flex-col gap-3 fade-in-up">
+    <div className="fixed right-3 sm:right-4 top-[38%] z-50 -translate-y-1/2 flex flex-col gap-3 fade-in-up">
       {buttons.map(({ label, icon: Icon, onClick, className }, i) => (
         <button
           key={label}
