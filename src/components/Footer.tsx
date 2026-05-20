@@ -55,8 +55,14 @@ export function Footer() {
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand" />
               <span>S4, B Block, PGP Village, Singanallur, Coimbatore 641005</span>
             </li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand" /> +91 00000 00000</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand" /> info@chennaibuildcare.com</li>
+            <li className="flex gap-2">
+              <Phone className="h-4 w-4 mt-0.5 text-brand" aria-hidden="true" />
+              <a href="tel:+910000000000" className="hover:text-brand">+91 00000 00000</a>
+            </li>
+            <li className="flex gap-2">
+              <Mail className="h-4 w-4 mt-0.5 text-brand" aria-hidden="true" />
+              <a href="mailto:info@chennaibuildcare.com" className="hover:text-brand">info@chennaibuildcare.com</a>
+            </li>
           </ul>
           <Link
             to="/contact"
