@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import {
   Award,
