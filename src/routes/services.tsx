@@ -123,6 +123,46 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Moisture barriers and fastening details",
     ],
   },
+  "Gyproc Plastering": {
+    intro:
+      "Premium Gyproc plastering solutions for smooth, durable, and crack-resistant wall finishes across residential, commercial, and industrial projects.",
+    bullets: [
+      "Smooth wall finishing systems",
+      "Crack-resistant plaster applications",
+      "Lightweight surface solutions",
+      "Fast-track interior finishing systems",
+    ],
+  },
+  "Tiles Epoxy": {
+    intro:
+      "High-performance tile epoxy solutions designed for superior bonding, waterproofing, chemical resistance, and long-lasting floor durability.",
+    bullets: [
+      "Epoxy tile joint filling",
+      "Chemical-resistant epoxy systems",
+      "Waterproof tile applications",
+      "Industrial and commercial flooring solutions",
+    ],
+  },
+  "Gyproc Ceiling": {
+    intro:
+      "Modern Gyproc ceiling systems engineered for elegant interiors, acoustic comfort, and seamless architectural finishes.",
+    bullets: [
+      "False ceiling installations",
+      "Acoustic ceiling systems",
+      "Moisture-resistant ceiling panels",
+      "Decorative and designer ceiling solutions",
+    ],
+  },
+  "Partition Walls & Boards": {
+    intro:
+      "Lightweight partition wall and board systems for efficient space division, modern interiors, and flexible commercial layouts.",
+    bullets: [
+      "Gypsum partition wall systems",
+      "Drywall board installations",
+      "Acoustic partition solutions",
+      "Modular interior wall systems",
+    ],
+  },
 };
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -134,6 +174,17 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "Building Repair & Retrofitting": Construction,
   Grouting: Wrench,
   "Roof & Deck Insulation": Thermometer,
+  "Gyproc Plastering": Paintbrush,
+  "Tiles Epoxy": Grid3x3,
+  "Gyproc Ceiling": PanelTop,
+  "Partition Walls & Boards": Columns3,
+};
+
+const SERVICE_FALLBACK_IMAGES: Record<string, string> = {
+  "Gyproc Plastering": gyprocPlasteringImg,
+  "Tiles Epoxy": tilesEpoxyImg,
+  "Gyproc Ceiling": gyprocCeilingImg,
+  "Partition Walls & Boards": partitionWallsImg,
 };
 
 function ServicesPage() {
