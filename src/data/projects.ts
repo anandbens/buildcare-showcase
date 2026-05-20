@@ -517,6 +517,8 @@ export const PROJECTS: Project[] = [
       "High-performance moisture barrier system beneath an insulation build-up for a cold storage facility.",
     scope: ["Substrate prep", "Self-adhered vapour barrier", "Detail flashings"],
     gallery: [insul3, insul1, insul2],
+  },
+
   // Real on-site project photos
   {
     slug: "epoxy-flooring-zoned-warehouse",
