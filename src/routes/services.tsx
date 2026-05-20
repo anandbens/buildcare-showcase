@@ -73,6 +73,16 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Methyl Methacrylate Acrylic (MMA)",
     ],
   },
+  "Di-Electric Flooring": {
+    intro:
+      "High-voltage insulating di-electric flooring systems for substations, panel rooms and electrical infrastructure — engineered for operator safety and code compliance.",
+    bullets: [
+      "Insulating epoxy primer & topcoat",
+      "Up to 65 kV dielectric strength systems",
+      "Anti-static & non-conductive finishes",
+      "Dielectric testing & certification",
+    ],
+  },
   "Concrete Polishing": {
     intro:
       "Multi-step diamond polishing with densifiers and guards delivering durable, dust-free, low-maintenance concrete finishes.",
@@ -169,6 +179,7 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   Waterproofing: Droplets,
   "Epoxy Flooring": Layers,
   "PU Flooring": Shield,
+  "Di-Electric Flooring": Sparkles,
   "Concrete Polishing": Gem,
   "Concrete Grinding & Polishing": Hammer,
   "Building Repair & Retrofitting": Construction,
