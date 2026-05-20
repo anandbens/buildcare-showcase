@@ -75,7 +75,7 @@ function ProjectsPage() {
             <h1 className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance fade-in-up">
               Built to last.
               <br />
-              <span className="text-brand">Engineered to perform.</span>
+              <span className="text-brand text-7xl">Engineered to perform.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70 fade-in-up">
               A curated portfolio of completed and ongoing projects across industrial, commercial
