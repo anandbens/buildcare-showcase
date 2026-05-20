@@ -129,10 +129,10 @@ export function FloatingEnquiryButton() {
   return (
     <button
       onClick={() => open()}
-      aria-label="Enquire Now"
-      className="fixed right-0 top-1/2 z-40 -translate-y-1/2 origin-right -rotate-90 translate-x-[calc(50%-1.25rem)] rounded-t-lg bg-gradient-brand px-5 py-3 text-sm font-semibold uppercase tracking-wider text-brand-foreground shadow-brand hover:brightness-110 transition animate-float-pulse"
+      aria-label="Quick Inquiry"
+      className="fixed right-0 top-1/2 z-40 -translate-y-1/2 origin-right -rotate-90 translate-x-[calc(50%-1.25rem)] rounded-t-xl bg-primary px-6 py-3 text-sm font-semibold tracking-wide text-primary-foreground shadow-[0_8px_24px_-6px_rgba(15,23,42,0.4)] ring-1 ring-white/10 hover:bg-primary/90 hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.5)] transition-all duration-300"
     >
-      ✦ Enquire Now
+      Quick Inquiry
     </button>
   );
 }
