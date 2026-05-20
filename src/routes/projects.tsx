@@ -67,23 +67,23 @@ function ProjectsPage() {
         {/* Orange glow */}
         <div className="absolute -top-32 -right-20 h-[520px] w-[520px] rounded-full bg-brand/30 blur-[160px]" />
 
-        <div className="relative container-x py-24 md:py-32 lg:py-40">
+        <div className="relative container-x py-16 md:py-20 lg:py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand ring-1 ring-white/15 fade-in-up">
               <Sparkles className="h-3.5 w-3.5" /> Portfolio
             </div>
-            <h1 className="mt-6 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance fade-in-up">
+            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance fade-in-up">
               Built to last.
               <br />
-              <span className="text-brand text-7xl">Engineered to perform.</span>
+              <span className="text-brand">Engineered to perform.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/70 fade-in-up">
+            <p className="mt-4 max-w-xl text-base text-white/70 fade-in-up">
               A curated portfolio of completed and ongoing projects across industrial, commercial
               and infrastructure sectors — delivered by qualified civil engineers.
             </p>
 
             {/* Stats strip */}
-            <div className="mt-12 grid grid-cols-3 gap-6 max-w-2xl fade-in-up">
+            <div className="mt-8 flex items-center gap-8 fade-in-up">
               <Stat value={`${totalCompleted}+`} label="Completed" />
               <Stat value={`${totalOngoing}+`} label="Ongoing" />
               <Stat value={`${CATEGORIES.length}`} label="Categories" />
