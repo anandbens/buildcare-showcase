@@ -84,9 +84,9 @@ function ProjectsPage() {
 
             {/* Stats strip */}
             <div className="mt-8 flex items-center gap-8 fade-in-up">
-              <StatCompact value={`${totalCompleted}+`} label="Completed" />
-              <StatCompact value={`${totalOngoing}+`} label="Ongoing" />
-              <StatCompact value={`${CATEGORIES.length}`} label="Categories" />
+              <Stat value={`${totalCompleted}+`} label="Completed" />
+              <Stat value={`${totalOngoing}+`} label="Ongoing" />
+              <Stat value={`${CATEGORIES.length}`} label="Categories" />
             </div>
           </div>
         </div>
