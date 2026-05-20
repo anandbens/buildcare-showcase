@@ -81,12 +81,73 @@ const TRUST = [
 function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Since 1998"
-        title="Engineering trust into every square metre."
-        subtitle="Chennai Buildcare Technologies is a professional civil engineering company specialising in world-class, economical and sustainable construction chemical solutions."
-        image={heroCover}
-      />
+      {/* === HERO === */}
+      <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
+        <div className="absolute inset-0">
+          <img
+            src={heroCover}
+            alt=""
+            className="h-full w-full object-cover opacity-30 animate-kenburns"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0b1220] via-[#0b1220]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-transparent to-transparent" />
+        </div>
+
+        {/* industrial grid */}
+        <div
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* ambient glows */}
+        <div className="absolute -top-32 -right-20 h-[520px] w-[520px] rounded-full bg-brand/30 blur-[160px] animate-float-pulse" />
+        <div className="absolute -bottom-20 -left-20 h-[420px] w-[420px] rounded-full bg-brand/15 blur-[140px]" />
+
+        <div className="relative container-x py-16 md:py-20 lg:py-24">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand ring-1 ring-white/15 fade-in-up">
+              <Sparkles className="h-3.5 w-3.5" /> Since 1998
+            </div>
+            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance fade-in-up">
+              Engineering trust into every{" "}
+              <span className="bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                square metre
+              </span>
+              .
+            </h1>
+            <p className="mt-4 max-w-xl text-base text-white/70 fade-in-up">
+              Chennai Buildcare Technologies is a professional civil engineering company
+              specialising in world-class, economical and sustainable construction chemical
+              solutions across India.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 fade-in-up">
+              <div>
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                  25+
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Years</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                  1200+
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Projects</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                  12L+
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Sq.m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* OUR STORY */}
       <section className="relative py-24 overflow-hidden">
