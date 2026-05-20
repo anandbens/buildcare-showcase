@@ -517,6 +517,79 @@ export const PROJECTS: Project[] = [
       "High-performance moisture barrier system beneath an insulation build-up for a cold storage facility.",
     scope: ["Substrate prep", "Self-adhered vapour barrier", "Detail flashings"],
     gallery: [insul3, insul1, insul2],
+  // Real on-site project photos
+  {
+    slug: "epoxy-flooring-zoned-warehouse",
+    title: "Zoned Epoxy Flooring — Industrial Warehouse",
+    category: "Epoxy Flooring",
+    status: "completed",
+    image: realEpoxyLines,
+    location: "Chennai, Tamil Nadu",
+    client: "Industrial Client",
+    year: "2025",
+    summary:
+      "High-build epoxy flooring with colour-coded traffic zones and yellow safety striping for operational clarity and durability.",
+    scope: [
+      "Mechanical surface preparation",
+      "Epoxy primer + high-build coloured epoxy",
+      "Zone demarcation & safety striping",
+      "Anti-slip finish",
+    ],
+    gallery: [realEpoxyLines, epoxy1, epoxy2],
+  },
+  {
+    slug: "pu-flooring-processing-line",
+    title: "Heavy-Duty PU Flooring — Processing Plant",
+    category: "PU Flooring",
+    status: "completed",
+    image: realPuConveyor,
+    location: "Tamil Nadu",
+    client: "Processing Facility",
+    year: "2025",
+    summary:
+      "Seamless heavy-duty PU cementitious flooring installed beneath conveyor lines for chemical and thermal-shock resistance.",
+    scope: [
+      "Shotblast surface prep",
+      "PU primer + 6 mm PU cementitious screed",
+      "Coved skirting & equipment detailing",
+    ],
+    gallery: [realPuConveyor, pu1, pu2],
+  },
+  {
+    slug: "dielectric-flooring-substation",
+    title: "Di-Electric Flooring — Electrical Panel Room",
+    category: "Di-Electric Flooring",
+    status: "completed",
+    image: realDielectricBlue,
+    location: "Tamil Nadu",
+    client: "Industrial Client",
+    year: "2025",
+    summary:
+      "High-voltage insulating di-electric epoxy flooring around switchgear and electrical panels for operator safety and compliance.",
+    scope: [
+      "Substrate testing & profiling",
+      "Di-electric epoxy primer + insulating topcoat",
+      "Dielectric strength testing & certification",
+    ],
+    gallery: [realDielectricBlue],
+  },
+  {
+    slug: "concrete-grinding-polishing-plant",
+    title: "Concrete Grinding & Polishing — Industrial Floor",
+    category: "Concrete Grinding & Polishing",
+    status: "completed",
+    image: realConcretePolish,
+    location: "Tamil Nadu",
+    client: "Manufacturing Facility",
+    year: "2025",
+    summary:
+      "Mechanical grinding and multi-step polishing of an industrial concrete slab delivering a dust-free, high-gloss finish.",
+    scope: [
+      "Diamond grinding 30/60/120 grit",
+      "Lithium densifier application",
+      "Polishing to 800 grit + guard",
+    ],
+    gallery: [realConcretePolish, polish1, polish2],
   },
 ];
 
@@ -525,6 +598,7 @@ export const CATEGORIES: ProjectCategory[] = [
   "Concrete Grinding & Polishing",
   "Epoxy Flooring",
   "PU Flooring",
+  "Di-Electric Flooring",
   "Waterproofing",
   "Building Repair & Retrofitting",
   "Grouting",
