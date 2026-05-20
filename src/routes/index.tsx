@@ -144,38 +144,15 @@ function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-28 md:py-36 overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9]">
-        {/* Abstract orange glows */}
-        <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-brand/25 blur-[140px]" />
-        <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-20 h-[520px] w-[520px] rounded-full bg-brand/20 blur-[160px]" />
-        <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/3 h-[300px] w-[300px] rounded-full bg-primary/10 blur-[120px]" />
-        {/* Subtle grid pattern */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #0f172a 1px, transparent 1px), linear-gradient(to bottom, #0f172a 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-
+      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9]">
         <div className="container-x relative">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-brand">
                 <span className="h-px w-8 bg-brand" /> What we do
               </span>
-              <h2 className="mt-5 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance leading-[1.02] text-[#0f172a]">
-                Full-spectrum{" "}
-                <span className="bg-gradient-to-r from-[#ff7a1a] via-[#ff9a4d] to-[#ff5a1a] bg-clip-text text-transparent">
-                  construction
-                </span>{" "}
-                chemical{" "}
-                <span className="bg-gradient-to-r from-[#ff7a1a] to-[#ff5a1a] bg-clip-text text-transparent">
-                  solutions
-                </span>
-                .
+              <h2 className="mt-5 text-3xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-balance leading-[1.1] text-[#0f172a]">
+                Full-spectrum construction chemical solutions
               </h2>
               <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
                 Engineered systems delivered by qualified civil engineers — from world-class
@@ -193,7 +170,7 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {CATEGORIES.map((c, i) => {
               const Icon = SERVICE_ICONS[c] ?? Building2;
               return (
@@ -201,47 +178,19 @@ function HomePage() {
                   to="/services"
                   key={c}
                   style={{ animationDelay: `${i * 80}ms` }}
-                  className="group relative flex flex-col h-full overflow-hidden rounded-3xl border border-white/60 bg-white/60 backdrop-blur-xl p-7 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(255,122,26,0.35)] hover:border-brand/40 fade-in-up"
+                  className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant fade-in-up"
                 >
-                  {/* Hover gradient overlay */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-brand/5 via-transparent to-brand/10"
-                  />
-                  {/* Glow border */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(255,122,26,0.5), transparent 50%, rgba(255,122,26,0.3))",
-                      mask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                      WebkitMask:
-                        "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                      WebkitMaskComposite: "xor",
-                      maskComposite: "exclude",
-                      padding: "1px",
-                    }}
-                  />
-
-                  <div className="relative">
-                    {/* Icon glow */}
-                    <div
-                      aria-hidden
-                      className="absolute -inset-2 rounded-2xl bg-brand/40 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500"
-                    />
-                    <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ff9a4d] to-[#ff5a1a] flex items-center justify-center text-white shadow-lg shadow-brand/30 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105">
-                      <Icon className="h-7 w-7" strokeWidth={2} />
-                    </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff9a4d] to-[#ff5a1a] flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <Icon className="h-6 w-6" strokeWidth={2} />
                   </div>
 
-                  <h3 className="relative mt-7 font-bold text-xl leading-tight tracking-tight text-[#0f172a]">
+                  <h3 className="mt-5 font-semibold text-lg leading-tight text-[#0f172a]">
                     {c}
                   </h3>
-                  <p className="relative mt-3 text-sm text-slate-500 leading-relaxed flex-1">
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
                     Specialist crews. Turnkey delivery. Warrantied systems built to perform.
                   </p>
-                  <span className="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand">
                     Explore
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
