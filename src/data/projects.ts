@@ -524,6 +524,10 @@ export const CATEGORIES: ProjectCategory[] = [
   "Building Repair & Retrofitting",
   "Grouting",
   "Roof & Deck Insulation",
+  "Gyproc Plastering",
+  "Tiles Epoxy",
+  "Gyproc Ceiling",
+  "Partition Walls & Boards",
 ];
 
 export function getProject(slug: string) {
