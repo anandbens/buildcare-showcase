@@ -3,6 +3,10 @@ import { useState } from "react";
 import { CATEGORIES, PROJECTS } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
+import gyprocPlasteringImg from "@/assets/projects/gyproc-plastering.jpg";
+import tilesEpoxyImg from "@/assets/projects/tiles-epoxy.jpg";
+import gyprocCeilingImg from "@/assets/projects/gyproc-ceiling.jpg";
+import partitionWallsImg from "@/assets/projects/partition-walls.jpg";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -17,6 +21,10 @@ import {
   Construction,
   Thermometer,
   Layers3,
+  Paintbrush,
+  Grid3x3,
+  PanelTop,
+  Columns3,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
