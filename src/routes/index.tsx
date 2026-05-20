@@ -102,7 +102,7 @@ function HomePage() {
           <div className="lg:col-span-7">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand">About CBT</p>
             <h2 className="mt-3 text-3xl md:text-5xl font-bold text-balance">
-              A professional civil engineering company synonymous with quality and innovation.
+              Discover quality-driven civil engineering innovation
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               Established in 1998, Chennai Buildcare Technologies has become the preferred choice
