@@ -1,9 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero } from "@/components/PageHero";
+import { useState } from "react";
 import { CATEGORIES, PROJECTS } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Sparkles,
+  Droplets,
+  Layers,
+  Shield,
+  Gem,
+  Hammer,
+  Wrench,
+  Construction,
+  Thermometer,
+  Layers3,
+} from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -103,76 +117,260 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
   },
 };
 
+const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  Waterproofing: Droplets,
+  "Epoxy Flooring": Layers,
+  "PU Flooring": Shield,
+  "Concrete Polishing": Gem,
+  "Concrete Grinding & Polishing": Hammer,
+  "Building Repair & Retrofitting": Construction,
+  Grouting: Wrench,
+  "Roof & Deck Insulation": Thermometer,
+};
+
 function ServicesPage() {
   const { open } = useEnquiry();
+  const [active, setActive] = useState<string>(CATEGORIES[0]);
+  const heroImage = PROJECTS[0]?.image;
+
   return (
     <>
-      <PageHero
-        eyebrow="Capabilities"
-        title="Engineered systems for every concrete challenge."
-        subtitle="From the foundation to the roof — and every floor in between — we deliver warrantied construction chemical solutions."
-      />
+      {/* === HERO === */}
+      <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
+        <div className="absolute inset-0">
+          {heroImage && (
+            <img
+              src={heroImage}
+              alt=""
+              className="h-full w-full object-cover opacity-30 animate-kenburns"
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0b1220] via-[#0b1220]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-transparent to-transparent" />
+        </div>
 
-      <section className="py-16 bg-secondary/30 border-b">
-        <div className="container-x">
-          <div className="flex flex-wrap justify-center gap-2">
-            {CATEGORIES.map((c) => (
-              <a
-                key={c}
-                href={`#${slugify(c)}`}
-                className="rounded-full border bg-card px-4 py-2 text-sm font-medium hover:bg-brand hover:text-brand-foreground transition"
-              >
-                {c}
-              </a>
-            ))}
+        {/* industrial grid */}
+        <div
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* ambient glows */}
+        <div className="absolute -top-32 -right-20 h-[520px] w-[520px] rounded-full bg-brand/30 blur-[160px] animate-float-pulse" />
+        <div className="absolute -bottom-20 -left-20 h-[420px] w-[420px] rounded-full bg-brand/15 blur-[140px]" />
+
+        <div className="relative container-x py-16 md:py-20 lg:py-24">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand ring-1 ring-white/15 fade-in-up">
+              <Sparkles className="h-3.5 w-3.5" /> Capabilities
+            </div>
+            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance fade-in-up">
+              Engineered systems for every{" "}
+              <span className="bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
+                concrete challenge
+              </span>
+              .
+            </h1>
+            <p className="mt-4 max-w-xl text-base text-white/70 fade-in-up">
+              From the foundation to the roof — and every floor in between — we deliver warrantied
+              construction chemical solutions backed by qualified civil engineers.
+            </p>
+
+            <div className="mt-8 flex items-center gap-8 fade-in-up">
+              <Stat value={`${CATEGORIES.length}`} label="Service Lines" />
+              <Stat value="24h" label="Response" />
+              <Stat value="10+ yrs" label="Warranty" />
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="container-x py-16 space-y-20">
-        {CATEGORIES.map((c, i) => {
-          const detail = SERVICE_DETAILS[c];
-          const proj = PROJECTS.find((p) => p.category === c);
-          const reverse = i % 2 === 1;
-          return (
-            <section key={c} id={slugify(c)} className="scroll-mt-24">
-              <div className={`grid lg:grid-cols-2 gap-10 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                <div className="relative overflow-hidden rounded-2xl shadow-elegant aspect-[4/3]">
-                  {proj && (
-                    <img src={proj.image} alt={c} className="h-full w-full object-cover hover:scale-105 transition-transform duration-700" />
-                  )}
-                  <div className="absolute top-4 left-4 rounded-full bg-brand text-brand-foreground px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-                    {String(i + 1).padStart(2, "0")}
+      {/* === STICKY FILTER === */}
+      <section className="sticky top-20 z-30 border-b border-slate-200/60 bg-white/70 backdrop-blur-2xl shadow-[0_4px_20px_-12px_rgba(15,23,42,0.15)]">
+        <div className="container-x py-5 flex flex-wrap items-center gap-2">
+          <span className="hidden md:inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500 mr-3">
+            <Layers3 className="h-3.5 w-3.5 text-brand" /> Browse
+          </span>
+          {CATEGORIES.map((c) => {
+            const Icon = SERVICE_ICONS[c] ?? Layers;
+            const isActive = active === c;
+            return (
+              <a
+                key={c}
+                href={`#${slugify(c)}`}
+                onClick={() => setActive(c)}
+                className={`inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-full border transition-all duration-300 ${
+                  isActive
+                    ? "text-white border-transparent shadow-[0_10px_24px_-8px_rgba(234,140,46,0.6)] bg-gradient-to-br from-[#f59e3a] to-[#e07016] ring-1 ring-white/20 -translate-y-0.5"
+                    : "bg-white/80 backdrop-blur text-slate-600 border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md"
+                }`}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {c}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* === BODY === */}
+      <div className="relative bg-gradient-to-b from-[#f8fafc] via-white to-[#f8fafc] overflow-hidden">
+        {/* subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.035] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(15,23,42,1) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,1) 1px,transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+        <div className="absolute top-40 -left-32 h-[400px] w-[400px] rounded-full bg-brand/10 blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-40 -right-32 h-[420px] w-[420px] rounded-full bg-[#0f172a]/5 blur-[140px] pointer-events-none" />
+
+        <div className="relative container-x py-20 lg:py-28 space-y-28 lg:space-y-32">
+          {CATEGORIES.map((c, i) => {
+            const detail = SERVICE_DETAILS[c];
+            const proj = PROJECTS.find((p) => p.category === c);
+            const reverse = i % 2 === 1;
+            const Icon = SERVICE_ICONS[c] ?? Layers;
+            return (
+              <section key={c} id={slugify(c)} className="scroll-mt-32 fade-in-up">
+                <div
+                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
+                    reverse ? "lg:[&>*:first-child]:order-2" : ""
+                  }`}
+                >
+                  {/* IMAGE */}
+                  <div className="relative group">
+                    {/* layered background card */}
+                    <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-brand/25 to-transparent blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
+                    <div
+                      className={`absolute -bottom-6 ${
+                        reverse ? "-left-6" : "-right-6"
+                      } hidden md:block h-full w-full rounded-[28px] bg-gradient-to-br from-slate-200/70 to-slate-100/40 -z-10`}
+                    />
+                    <div className="relative overflow-hidden rounded-[28px] aspect-[4/3] shadow-[0_30px_60px_-24px_rgba(15,23,42,0.35)] ring-1 ring-slate-200/60">
+                      {proj && (
+                        <img
+                          src={proj.image}
+                          alt={c}
+                          className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.1]"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/70 via-[#0f172a]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {/* number badge (glass) */}
+                      <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-2xl bg-white/15 backdrop-blur-xl px-4 py-2.5 text-white ring-1 ring-white/25 shadow-lg">
+                        <span className="text-[10px] uppercase tracking-[0.25em] text-white/70">
+                          Service
+                        </span>
+                        <span className="text-lg font-bold">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+
+                      {/* icon chip */}
+                      <div className="absolute bottom-5 right-5 h-12 w-12 rounded-2xl bg-gradient-to-br from-[#f59e3a] to-[#e07016] text-white flex items-center justify-center shadow-brand ring-2 ring-white/30">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-widest text-brand">Service</p>
-                  <h2 className="mt-2 text-3xl md:text-4xl font-bold">{c}</h2>
-                  <p className="mt-4 text-muted-foreground leading-relaxed">{detail.intro}</p>
-                  <ul className="mt-5 space-y-2">
-                    {detail.bullets.map((b) => (
-                      <li key={b} className="flex gap-2 text-sm">
-                        <Check className="h-5 w-5 text-brand shrink-0" /> <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <Button variant="brand" onClick={() => open({ service: c })}>
-                      Enquire about {c.split(" ")[0]}
-                    </Button>
-                    <Button variant="outline" asChild>
-                      <Link to="/projects" search={{}}>
-                        View {c} projects <ArrowRight />
+
+                  {/* CONTENT */}
+                  <div>
+                    <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-brand">
+                      <span className="h-px w-10 bg-gradient-to-r from-brand to-brand/0" />
+                      Capability · {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0f172a]">
+                      {c}
+                    </h2>
+                    <div className="mt-4 h-[2px] w-16 bg-gradient-to-r from-brand to-transparent" />
+                    <p className="mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
+                      {detail.intro}
+                    </p>
+
+                    <ul className="mt-7 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                      {detail.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="flex gap-3 items-start text-sm text-slate-700 group/item"
+                        >
+                          <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-gradient-to-br from-brand/20 to-brand/5 ring-1 ring-brand/30 flex items-center justify-center group-hover/item:from-brand group-hover/item:to-brand/80 group-hover/item:ring-brand transition-all duration-300">
+                            <Check className="h-3 w-3 text-brand group-hover/item:text-white transition-colors" />
+                          </span>
+                          <span className="leading-relaxed">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-9 flex flex-wrap gap-3">
+                      <button
+                        onClick={() => open({ service: c })}
+                        className="group/btn inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#f59e3a] to-[#e07016] text-white px-6 py-3 text-sm font-bold uppercase tracking-wider shadow-[0_12px_28px_-10px_rgba(234,140,46,0.65)] hover:shadow-[0_18px_36px_-10px_rgba(234,140,46,0.8)] hover:-translate-y-0.5 transition-all duration-300 ring-1 ring-white/20"
+                      >
+                        Enquire about {c.split(" ")[0]}
+                        <ArrowUpRight className="h-4 w-4 group-hover/btn:rotate-45 transition-transform duration-300" />
+                      </button>
+                      <Link
+                        to="/projects"
+                        search={{}}
+                        className="group/btn inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-xl text-slate-800 px-6 py-3 text-sm font-bold uppercase tracking-wider border border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+                      >
+                        View Projects
+                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </Link>
-                    </Button>
+                    </div>
                   </div>
                 </div>
+              </section>
+            );
+          })}
+        </div>
+
+        {/* === CTA === */}
+        <section className="relative container-x pb-24">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] p-10 md:p-16 shadow-elegant">
+            <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-brand/30 blur-[120px]" />
+            <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-brand/15 blur-[120px]" />
+            <div className="relative grid md:grid-cols-[1.5fr_auto] gap-8 items-center">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+                  Start your project
+                </p>
+                <h3 className="mt-3 text-3xl md:text-5xl font-bold text-white tracking-tight">
+                  Not sure which system fits your site?
+                </h3>
+                <p className="mt-4 text-white/70 max-w-xl">
+                  Share your scope and our engineers will recommend the right spec — with material,
+                  warranty and timeline mapped out.
+                </p>
               </div>
-            </section>
-          );
-        })}
+              <button
+                onClick={() => open()}
+                className="group inline-flex items-center gap-2 rounded-full bg-brand text-brand-foreground px-7 py-4 text-sm font-bold uppercase tracking-wider shadow-brand hover:bg-brand/90 transition-all hover:translate-x-1"
+              >
+                Talk to an engineer
+                <ArrowUpRight className="h-4 w-4 group-hover:rotate-45 transition-transform duration-300" />
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     </>
+  );
+}
+
+function Stat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="border-l-2 border-brand/60 pl-4">
+      <div className="text-3xl md:text-4xl font-bold text-white">{value}</div>
+      <div className="mt-1 text-xs uppercase tracking-widest text-white/60">{label}</div>
+    </div>
   );
 }
 
