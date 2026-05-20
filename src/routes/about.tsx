@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { useEnquiry } from "@/components/EnquiryDialog";
 import {
   Award,
   Target,
@@ -9,6 +10,7 @@ import {
   Users,
   ArrowRight,
   Sparkles,
+  Quote,
 } from "lucide-react";
 import heroCover from "@/assets/brand/hero-cover.jpg";
 import badge from "@/assets/brand/25years.jpg";
