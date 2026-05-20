@@ -81,6 +81,7 @@ const TRUST = [
 ];
 
 function AboutPage() {
+  const { open } = useEnquiry();
   return (
     <>
       {/* === HERO === */}
