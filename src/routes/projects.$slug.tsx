@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getProject, PROJECTS } from "@/data/projects";
+import { getProject, PROJECTS, type Project } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import {
@@ -12,7 +12,7 @@ import {
 import { ArrowLeft, MapPin, Calendar, Building, Ruler, Check, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/projects/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { project: Project } => {
     const project = getProject(params.slug);
     if (!project) throw notFound();
     return { project };
