@@ -37,12 +37,17 @@ function ClientsPage() {
             {CLIENTS.map((c) => (
               <div
                 key={c.name}
-                className="group relative aspect-[3/2] rounded-2xl border bg-card flex flex-col items-center justify-center text-center px-3 hover:shadow-elegant hover:-translate-y-1 transition-all"
+                className="group relative aspect-[3/2] rounded-2xl border bg-white flex flex-col items-center justify-between p-4 shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all"
               >
-                <div className="font-display font-bold text-lg text-primary group-hover:text-brand transition">
-                  {c.name}
+                <div className="flex-1 w-full flex items-center justify-center">
+                  <img
+                    src={c.logo}
+                    alt={`${c.name} logo`}
+                    loading="lazy"
+                    className="max-h-[70%] max-w-[85%] w-auto h-auto object-contain"
+                  />
                 </div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">
+                <div className="mt-2 text-[11px] uppercase tracking-wider text-muted-foreground text-center">
                   {c.sector}
                 </div>
               </div>
