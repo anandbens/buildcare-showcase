@@ -276,6 +276,13 @@ export type Database = {
     }
     Functions: {
       claim_admin: { Args: never; Returns: boolean }
+      get_public_contact: {
+        Args: never
+        Returns: {
+          company_email: string
+          company_phone: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
