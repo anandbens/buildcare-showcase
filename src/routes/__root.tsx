@@ -12,6 +12,8 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryProvider, FloatingEnquiryButton } from "@/components/EnquiryDialog";
+import { FloatingContactMenu } from "@/components/FloatingContactMenu";
+
 
 function NotFoundComponent() {
   return (
@@ -108,6 +110,8 @@ function RootComponent() {
           </main>
           <Footer />
           <FloatingEnquiryButton />
+          <FloatingContactMenu />
+
         </div>
       </EnquiryProvider>
     </QueryClientProvider>
