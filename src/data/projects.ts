@@ -27,11 +27,16 @@ import grout3 from "@/assets/projects/grout-3.jpg";
 import insul1 from "@/assets/projects/insul-1.jpg";
 import insul2 from "@/assets/projects/insul-2.jpg";
 import insul3 from "@/assets/projects/insul-3.jpg";
+import realEpoxyLines from "@/assets/projects/real-epoxy-lines.jpg";
+import realPuConveyor from "@/assets/projects/real-pu-conveyor.jpg";
+import realDielectricBlue from "@/assets/projects/real-dielectric-blue.jpg";
+import realConcretePolish from "@/assets/projects/real-concrete-polish.jpg";
 
 export type ProjectCategory =
   | "Waterproofing"
   | "Epoxy Flooring"
   | "PU Flooring"
+  | "Di-Electric Flooring"
   | "Concrete Polishing"
   | "Concrete Grinding & Polishing"
   | "Building Repair & Retrofitting"
