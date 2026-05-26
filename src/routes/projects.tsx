@@ -17,7 +17,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Browse our completed and ongoing projects across waterproofing, epoxy & PU flooring, polished concrete and structural retrofitting.",
+          "Browse our completed and ongoing projects across waterproofing, Polyurethane Flooring Food Industry, polished concrete and structural retrofitting.",
       },
       { property: "og:title", content: "Our Projects — Chennai Buildcare Technologies" },
     ],

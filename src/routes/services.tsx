@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Waterproofing, epoxy & PU flooring, concrete grinding & polishing, repair & retrofitting, grouting and acid-proof treatments — engineered systems with warranty.",
+          "Waterproofing, Polyurethane Flooring Food Industry, concrete grinding & polishing, repair & retrofitting, grouting and acid-proof treatments — engineered systems with warranty.",
       },
       { property: "og:title", content: "Services — Chennai Buildcare Technologies" },
     ],
@@ -53,7 +53,7 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Pressure grouting with cement, epoxy and PU resin",
     ],
   },
-  "Epoxy Flooring": {
+  "Polyurethane Flooring Food Industry": {
     intro:
       "Engineered epoxy systems from thin-film coatings to heavy-duty screeds — assessed by product, load, traffic and hygiene requirements.",
     bullets: [
@@ -177,7 +177,7 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   Waterproofing: Droplets,
-  "Epoxy Flooring": Layers,
+  "Polyurethane Flooring Food Industry": Layers,
   "PU Flooring": Shield,
   "Di-Electric Flooring": Sparkles,
   "Concrete Polishing": Gem,
