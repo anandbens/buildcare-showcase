@@ -230,11 +230,6 @@ function ProjectsPage() {
                         {p.status}
                       </div>
 
-                      {/* Year chip */}
-                      <div className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full bg-white/95 backdrop-blur text-[#0f172a] px-3 py-1.5 text-[10px] font-bold tracking-wider shadow-md ring-1 ring-white/40">
-                        <Calendar className="h-3 w-3" />
-                        {p.year}
-                      </div>
 
                       {/* Hover CTA */}
                       <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
@@ -256,16 +251,6 @@ function ProjectsPage() {
                       <h3 className="mt-3 font-bold text-lg lg:text-xl leading-snug line-clamp-2 text-[#0f172a] group-hover:text-brand transition-colors duration-300">
                         {p.title}
                       </h3>
-
-                      <div className="mt-6 pt-5 border-t border-dashed border-slate-200 flex items-center justify-between text-sm">
-                        <span className="inline-flex items-center gap-1.5 text-slate-500 font-medium">
-                          <MapPin className="h-3.5 w-3.5 text-brand" /> {p.location}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-400 group-hover:text-brand transition-colors">
-                          <Calendar className="h-3 w-3" />
-                          {p.year}
-                        </span>
-                      </div>
                     </div>
                   </Link>
                 ))}
