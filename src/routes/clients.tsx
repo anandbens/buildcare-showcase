@@ -138,46 +138,26 @@ function ClientsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {CLIENTS.map((c, i) => {
-              const Icon = getSectorIcon(c.sector);
-              return (
-                <div
-                  key={c.name}
-                  className="group relative aspect-[4/3] rounded-2xl bg-white/80 backdrop-blur-xl ring-1 ring-slate-200/70 shadow-[0_4px_20px_-12px_rgba(15,23,42,0.15)] hover:shadow-[0_20px_40px_-16px_rgba(234,140,46,0.35)] hover:-translate-y-1.5 hover:ring-brand/30 transition-all duration-500 overflow-hidden fade-in-up"
-                  style={{ animationDelay: `${Math.min(i * 30, 600)}ms` }}
-                >
-                  {/* hover glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand/0 via-brand/0 to-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {CLIENTS.map((c, i) => (
+              <div
+                key={c.name}
+                className="group relative aspect-[4/3] rounded-2xl bg-white/80 backdrop-blur-xl ring-1 ring-slate-200/70 shadow-[0_4px_20px_-12px_rgba(15,23,42,0.15)] hover:shadow-[0_20px_40px_-16px_rgba(234,140,46,0.35)] hover:-translate-y-1.5 hover:ring-brand/30 transition-all duration-500 overflow-hidden fade-in-up"
+                style={{ animationDelay: `${Math.min(i * 30, 600)}ms` }}
+              >
+                {/* hover glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand/0 via-brand/0 to-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="relative h-full w-full flex flex-col items-center justify-between p-5">
-                    <div className="flex-1 w-full flex items-center justify-center">
-                      {c.logo ? (
-                        <img
-                          src={c.logo}
-                          alt={`${c.name} logo`}
-                          loading="lazy"
-                          className="max-h-[70%] max-w-[80%] w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-110"
-                        />
-                      ) : (
-                        <div className="flex flex-col items-center justify-center text-center gap-2">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand/15 to-brand/5 ring-1 ring-brand/20 transition-transform duration-500 group-hover:scale-110">
-                            <Icon className="h-5 w-5 text-brand" />
-                          </div>
-                          <div className="text-sm font-bold tracking-tight text-slate-800 leading-tight">
-                            {c.name}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <div className="mt-3 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-slate-500 group-hover:text-brand transition-colors">
-                      <Icon className="h-3 w-3" />
-                      {c.sector}
-                    </div>
-                  </div>
+                <div className="relative h-full w-full flex items-center justify-center p-5">
+                  <img
+                    src={c.logo}
+                    alt={`${c.name} logo`}
+                    loading="lazy"
+                    className="max-h-[70%] max-w-[80%] w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
