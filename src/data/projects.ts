@@ -88,8 +88,8 @@ export const PROJECTS: Project[] = [
     gallery: [wpLiquid, wpCrystalline, wpGrouting],
   },
   {
-    slug: "crystalline-waterproofing-podium",
-    title: "Crystalline Waterproofing — Podium Slab",
+    slug: "membrane-waterproofing-podium",
+    title: "Membrane Waterproofing — Podium Slab",
     category: "Waterproofing",
     status: "completed",
     image: wpCrystalline,
@@ -174,8 +174,8 @@ export const PROJECTS: Project[] = [
 
   // PU Flooring
   {
-    slug: "pu-flooring-food-plant",
-    title: "Heavy-Duty PU Cementitious Flooring — Food Processing",
+    slug: "heavy-duty-pu-flooring-food-processing",
+    title: "Heavy-Duty PU Flooring — Food Processing",
     category: "PU Flooring",
     status: "completed",
     image: pu1,
@@ -374,8 +374,8 @@ export const PROJECTS: Project[] = [
     gallery: [retro1, retro2, retro3],
   },
   {
-    slug: "repair-structural-column",
-    title: "Structural Column Repair & Jacketing",
+    slug: "structural-column-repair-carbon-wrapping",
+    title: "Structural Column Repair & Carbon Wrapping",
     category: "Building Repair & Retrofitting",
     status: "completed",
     image: retro2,
@@ -446,8 +446,8 @@ export const PROJECTS: Project[] = [
     gallery: [grout1, grout2, grout3],
   },
   {
-    slug: "grouting-epoxy-injection",
-    title: "Epoxy Resin Injection Grouting",
+    slug: "epoxy-resin-injection-grouting-machine",
+    title: "Epoxy Resin Injection Grouting Machine",
     category: "Grouting",
     status: "completed",
     image: grout2,
