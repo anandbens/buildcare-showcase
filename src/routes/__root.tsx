@@ -68,10 +68,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "25 years of waterproofing, epoxy & PU flooring, concrete grinding & polishing, repair & retrofitting and grouting expertise across India.",
       },
-      { property: "og:title", content: "Chennai Buildcare Technologies" },
-      { property: "og:description", content: "Pioneering Innovative Concrete Solutions Since 1998." },
+      { property: "og:title", content: "Chennai Buildcare Technologies — Innovative Concrete Solutions Since 1998" },
+      { property: "og:description", content: "Buildcare Showcase is a modern corporate website for Chennai Buildcare Technologies, highlighting their construction chemical services and projects." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Chennai Buildcare Technologies — Innovative Concrete Solutions Since 1998" },
+      { name: "description", content: "Buildcare Showcase is a modern corporate website for Chennai Buildcare Technologies, highlighting their construction chemical services and projects." },
+      { name: "twitter:description", content: "Buildcare Showcase is a modern corporate website for Chennai Buildcare Technologies, highlighting their construction chemical services and projects." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5f7acedd-5d4d-40ea-aba1-112363601f17/id-preview-8ff41701--d13db92e-64c1-4d3f-bb32-065e5e7e11f1.lovable.app-1779806709580.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5f7acedd-5d4d-40ea-aba1-112363601f17/id-preview-8ff41701--d13db92e-64c1-4d3f-bb32-065e5e7e11f1.lovable.app-1779806709580.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
