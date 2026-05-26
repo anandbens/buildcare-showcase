@@ -78,11 +78,15 @@ function ContactPage() {
             <div className="rounded-2xl bg-gradient-hero text-primary-foreground p-6 space-y-3 shadow-elegant">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-brand" />
-                <a href="tel:+910000000000" className="font-semibold">+91 00000 00000</a>
+                <a href="tel:+919444018098" className="font-semibold">+91 94440 18098</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-brand" />
+                <a href="tel:+917010342011" className="font-semibold">+91 70103 42011</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-brand" />
-                <a href="mailto:info@chennaibuildcare.com" className="font-semibold">info@chennaibuildcare.com</a>
+                <a href="mailto:veshiva@gmail.com" className="font-semibold">veshiva@gmail.com</a>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-brand" />
