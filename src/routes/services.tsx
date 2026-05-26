@@ -55,14 +55,17 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
   },
   "Polyurethane Flooring Food Industry": {
     intro:
-      "Engineered epoxy systems from thin-film coatings to heavy-duty screeds — assessed by product, load, traffic and hygiene requirements.",
+      "HACCP-compliant polyurethane cementitious flooring engineered for food & beverage processing plants — delivering thermal-shock, chemical and impact resistance with a seamless, hygienic, anti-bacterial finish that stands up to daily wash-down and steam cleaning.",
     bullets: [
-      "Coatings (< 500 microns)",
-      "Self-smoothing (1–2 mm)",
-      "Screed (≥ 3 mm)",
-      "ESD (anti-static) flooring with copper grid",
+      "Heavy-duty PU cementitious screed (4–12 mm) for wet processing areas",
+      "Withstands thermal shock up to 120°C — ideal for steam & hot water wash-down",
+      "Seamless coved skirting & drain detailing for hygienic, easy-to-clean surfaces",
+      "Anti-bacterial, anti-slip and chemical-resistant finish (acids, fats, sugars, oils)",
+      "HACCP, FSSAI and food-safety compliant systems",
+      "Suitable for dairies, bakeries, breweries, meat & seafood processing, cold storage",
     ],
   },
+
   "PU Flooring": {
     intro:
       "Polyurethane resinous systems for chemical, thermal and impact resistance — including HACCP-compliant PU cementitious flooring for food and pharma.",
@@ -261,31 +264,32 @@ function ServicesPage() {
 
       {/* === STICKY FILTER === */}
       <section className="sticky top-20 z-30 border-b border-slate-200/60 bg-white/70 backdrop-blur-2xl shadow-[0_4px_20px_-12px_rgba(15,23,42,0.15)]">
-        <div className="container-x py-5 flex flex-wrap items-center gap-2">
-          <span className="hidden md:inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500 mr-3">
-            <Layers3 className="h-3.5 w-3.5 text-brand" /> Browse
+        <div className="container-x py-5 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
+            <Layers3 className="h-3.5 w-3.5 text-brand" /> Jump to service
           </span>
-          {CATEGORIES.map((c) => {
-            const Icon = SERVICE_ICONS[c] ?? Layers;
-            const isActive = active === c;
-            return (
-              <a
-                key={c}
-                href={`#${slugify(c)}`}
-                onClick={() => setActive(c)}
-                className={`inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-full border transition-all duration-300 ${
-                  isActive
-                    ? "text-white border-transparent shadow-[0_10px_24px_-8px_rgba(234,140,46,0.6)] bg-gradient-to-br from-[#f59e3a] to-[#e07016] ring-1 ring-white/20 -translate-y-0.5"
-                    : "bg-white/80 backdrop-blur text-slate-600 border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md"
-                }`}
-              >
-                <Icon className="h-3.5 w-3.5" />
-                {c}
-              </a>
-            );
-          })}
+          <div className="relative flex-1 min-w-[240px] max-w-md">
+            <select
+              value={active}
+              onChange={(e) => {
+                const value = e.target.value;
+                setActive(value);
+                const el = document.getElementById(slugify(value));
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="w-full appearance-none rounded-full border border-slate-200 bg-white/90 backdrop-blur px-5 py-3 pr-12 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-transparent transition-all hover:border-brand hover:text-brand focus:outline-none focus:border-brand focus:ring-brand/30"
+            >
+              {CATEGORIES.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            <ArrowRight className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 rotate-90 text-brand" />
+          </div>
         </div>
       </section>
+
 
       {/* === BODY === */}
       <div className="relative bg-gradient-to-b from-[#f8fafc] via-white to-[#f8fafc] overflow-hidden">
