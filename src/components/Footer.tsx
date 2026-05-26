@@ -49,19 +49,27 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm opacity-90">
             <li className="flex gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand" />
-              <span>No 16/12, NSK 3rd Street, Lakshmipuram, Thiruvanmiyur, Chennai 600041</span>
+              <span><span className="font-semibold">Head Office:</span> S4, B Block, PGP Village, Singanallur, Coimbatore 641005</span>
             </li>
             <li className="flex gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand" />
-              <span>S4, B Block, PGP Village, Singanallur, Coimbatore 641005</span>
+              <span><span className="font-semibold">Branch:</span> No 16/12, NSK 3rd Street, Lakshmipuram, Thiruvanmiyur, Chennai 600041</span>
+            </li>
+            <li className="flex gap-2">
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand" />
+              <span><span className="font-semibold">Branch:</span> 14/15, Municipal Colony, College Road, Tirupur 641602</span>
             </li>
             <li className="flex gap-2">
               <Phone className="h-4 w-4 mt-0.5 text-brand" aria-hidden="true" />
-              <a href="tel:+910000000000" className="hover:text-brand">+91 00000 00000</a>
+              <a href="tel:+919444018098" className="hover:text-brand">+91 94440 18098</a>
+            </li>
+            <li className="flex gap-2">
+              <Phone className="h-4 w-4 mt-0.5 text-brand" aria-hidden="true" />
+              <a href="tel:+917010342011" className="hover:text-brand">+91 70103 42011</a>
             </li>
             <li className="flex gap-2">
               <Mail className="h-4 w-4 mt-0.5 text-brand" aria-hidden="true" />
-              <a href="mailto:info@chennaibuildcare.com" className="hover:text-brand">info@chennaibuildcare.com</a>
+              <a href="mailto:veshiva@gmail.com" className="hover:text-brand">veshiva@gmail.com</a>
             </li>
           </ul>
           <Link
