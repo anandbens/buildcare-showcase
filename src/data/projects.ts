@@ -261,7 +261,7 @@ export const PROJECTS: Project[] = [
     year: "2026",
     area: "4,000 sq.m",
     summary:
-      "Anti-static (ESD) epoxy flooring with copper grid and conductive primer for sensitive electronics assembly lines.",
+      "Anti-static (ESD) Polyurethane Flooring Food Industry with copper grid and conductive primer for sensitive electronics assembly lines.",
     scope: ["Conductive primer + copper earth strip", "ESD epoxy self-smoothing", "Resistance testing & certification"],
     gallery: [epoxy3, epoxy1, epoxy2],
   },
@@ -530,7 +530,7 @@ export const PROJECTS: Project[] = [
     client: "Industrial Client",
     year: "2025",
     summary:
-      "High-build epoxy flooring with colour-coded traffic zones and yellow safety striping for operational clarity and durability.",
+      "High-build Polyurethane Flooring Food Industry with colour-coded traffic zones and yellow safety striping for operational clarity and durability.",
     scope: [
       "Mechanical surface preparation",
       "Epoxy primer + high-build coloured epoxy",
@@ -567,7 +567,7 @@ export const PROJECTS: Project[] = [
     client: "Industrial Client",
     year: "2025",
     summary:
-      "High-voltage insulating di-electric epoxy flooring around switchgear and electrical panels for operator safety and compliance.",
+      "High-voltage insulating di-electric Polyurethane Flooring Food Industry around switchgear and electrical panels for operator safety and compliance.",
     scope: [
       "Substrate testing & profiling",
       "Di-electric epoxy primer + insulating topcoat",
