@@ -25,15 +25,15 @@ export const Route = createFileRoute("/contact")({
 
 const OFFICES = [
   {
-    city: "Chennai",
-    address: "No 16/12, NSK 3rd Street, Lakshmipuram, Thiruvanmiyur, Chennai 600041",
-  },
-  {
-    city: "Coimbatore",
+    city: "Coimbatore — Head Office",
     address: "S4, B Block, PGP Village, Singanallur, Coimbatore 641005",
   },
   {
-    city: "Tirupur",
+    city: "Chennai — Branch",
+    address: "No 16/12, NSK 3rd Street, Lakshmipuram, Thiruvanmiyur, Chennai 600041",
+  },
+  {
+    city: "Tirupur — Branch",
     address: "14/15, Municipal Colony, College Road, Tirupur 641602",
   },
 ];
