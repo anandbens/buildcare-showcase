@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Waterproofing, epoxy & PU flooring, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years.",
+          "Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years.",
       },
     ],
   }),
