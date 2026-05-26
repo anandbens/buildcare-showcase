@@ -252,7 +252,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "epoxy-flooring-electronics",
-    title: "ESD Epoxy Flooring — Electronics Manufacturing",
+    title: "ESD Polyurethane Flooring Food Industry — Electronics Manufacturing",
     category: "Polyurethane Flooring Food Industry",
     status: "ongoing",
     image: epoxy3,
@@ -522,7 +522,7 @@ export const PROJECTS: Project[] = [
   // Real on-site project photos
   {
     slug: "epoxy-flooring-zoned-warehouse",
-    title: "Zoned Epoxy Flooring — Industrial Warehouse",
+    title: "Zoned Polyurethane Flooring Food Industry — Industrial Warehouse",
     category: "Polyurethane Flooring Food Industry",
     status: "completed",
     image: realEpoxyLines,
