@@ -523,7 +523,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "epoxy-flooring-zoned-warehouse",
     title: "Zoned Epoxy Flooring — Industrial Warehouse",
-    category: "Epoxy Flooring",
+    category: "Polyurethane Flooring Food Industry",
     status: "completed",
     image: realEpoxyLines,
     location: "Chennai, Tamil Nadu",
