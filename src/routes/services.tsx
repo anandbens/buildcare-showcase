@@ -55,14 +55,17 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
   },
   "Polyurethane Flooring Food Industry": {
     intro:
-      "Engineered epoxy systems from thin-film coatings to heavy-duty screeds — assessed by product, load, traffic and hygiene requirements.",
+      "HACCP-compliant polyurethane cementitious flooring engineered for food & beverage processing plants — delivering thermal-shock, chemical and impact resistance with a seamless, hygienic, anti-bacterial finish that stands up to daily wash-down and steam cleaning.",
     bullets: [
-      "Coatings (< 500 microns)",
-      "Self-smoothing (1–2 mm)",
-      "Screed (≥ 3 mm)",
-      "ESD (anti-static) flooring with copper grid",
+      "Heavy-duty PU cementitious screed (4–12 mm) for wet processing areas",
+      "Withstands thermal shock up to 120°C — ideal for steam & hot water wash-down",
+      "Seamless coved skirting & drain detailing for hygienic, easy-to-clean surfaces",
+      "Anti-bacterial, anti-slip and chemical-resistant finish (acids, fats, sugars, oils)",
+      "HACCP, FSSAI and food-safety compliant systems",
+      "Suitable for dairies, bakeries, breweries, meat & seafood processing, cold storage",
     ],
   },
+
   "PU Flooring": {
     intro:
       "Polyurethane resinous systems for chemical, thermal and impact resistance — including HACCP-compliant PU cementitious flooring for food and pharma.",
