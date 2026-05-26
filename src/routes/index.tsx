@@ -19,7 +19,6 @@ import {
   Quote,
 } from "lucide-react";
 import { PROJECTS, CATEGORIES } from "@/data/projects";
-import { CLIENTS } from "@/data/clients";
 import heroCover from "@/assets/brand/hero-cover.jpg";
 import badge from "@/assets/brand/25years.jpg";
 
@@ -369,54 +368,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ========== CLIENTS ========== */}
-      <section className="relative py-24 overflow-hidden bg-[#0a1020] text-white">
-        <div
-          className="absolute inset-0 opacity-[0.05] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,255,255,1) 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[800px] rounded-full bg-[#f59e3a]/10 blur-[150px]" />
-
-        <div className="container-x relative">
-          <div className="text-center max-w-2xl mx-auto">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#f59e3a]">
-              <span className="h-px w-8 bg-[#f59e3a]" /> Trusted by <span className="h-px w-8 bg-[#f59e3a]" />
-            </span>
-            <h2 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight">
-              Leaders across{" "}
-              <span className="bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">every industry.</span>
-            </h2>
-          </div>
-        </div>
-
-        <div className="mt-14 relative">
-          {/* Fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a1020] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1020] to-transparent z-10 pointer-events-none" />
-
-          <div className="flex w-max animate-marquee gap-4 px-3">
-            {[...CLIENTS, ...CLIENTS].map((c, i) => (
-              <div
-                key={i}
-                className="group shrink-0 rounded-2xl bg-white/[0.04] backdrop-blur-xl ring-1 ring-white/10 px-7 py-4 text-sm font-medium text-white/80 hover:bg-white/[0.08] hover:ring-[#f59e3a]/40 hover:text-white transition-all hover:-translate-y-0.5"
-              >
-                {c.name}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container-x mt-12 text-center">
-          <Link to="/clients" className="group inline-flex items-center gap-2 text-sm font-semibold text-[#f59e3a] hover:text-white transition-colors">
-            See our full client list
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-      </section>
 
       {/* ========== TRUST / VALUES ========== */}
       <section className="relative py-24 md:py-32 overflow-hidden">
