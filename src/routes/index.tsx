@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
 
 const SERVICE_ICONS: Record<string, typeof Droplets> = {
   Waterproofing: Droplets,
-  "Epoxy Flooring": Layers,
+  "Polyurethane Flooring Food Industry": Layers,
   "PU Flooring": Layers,
   "Concrete Polishing": Sparkles,
   "Concrete Grinding & Polishing": Sparkles,

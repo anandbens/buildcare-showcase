@@ -34,7 +34,7 @@ import realConcretePolish from "@/assets/projects/real-concrete-polish.jpg";
 
 export type ProjectCategory =
   | "Waterproofing"
-  | "Epoxy Flooring"
+  | "Polyurethane Flooring Food Industry"
   | "PU Flooring"
   | "Di-Electric Flooring"
   | "Concrete Polishing"
@@ -219,11 +219,11 @@ export const PROJECTS: Project[] = [
     gallery: [pu3, pu1, pu2],
   },
 
-  // Epoxy Flooring
+  // Polyurethane Flooring Food Industry
   {
     slug: "pu-flooring-food-industry",
     title: "Polyurethane Flooring Food Industry",
-    category: "Epoxy Flooring",
+    category: "Polyurethane Flooring Food Industry",
     status: "completed",
     image: epoxy1,
     location: "Oragadam, Tamil Nadu",
@@ -238,7 +238,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "epoxy-flooring-automotive",
     title: "Epoxy Coating System — Automotive Workshop",
-    category: "Epoxy Flooring",
+    category: "Polyurethane Flooring Food Industry",
     status: "completed",
     image: epoxy2,
     location: "Chennai, Tamil Nadu",
@@ -253,7 +253,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "epoxy-flooring-electronics",
     title: "ESD Epoxy Flooring — Electronics Manufacturing",
-    category: "Epoxy Flooring",
+    category: "Polyurethane Flooring Food Industry",
     status: "ongoing",
     image: epoxy3,
     location: "Sriperumbudur, Tamil Nadu",
@@ -598,7 +598,7 @@ export const PROJECTS: Project[] = [
 export const CATEGORIES: ProjectCategory[] = [
   "Concrete Polishing",
   "Concrete Grinding & Polishing",
-  "Epoxy Flooring",
+  "Polyurethane Flooring Food Industry",
   "PU Flooring",
   "Di-Electric Flooring",
   "Waterproofing",

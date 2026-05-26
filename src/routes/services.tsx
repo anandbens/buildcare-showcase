@@ -53,7 +53,7 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Pressure grouting with cement, epoxy and PU resin",
     ],
   },
-  "Epoxy Flooring": {
+  "Polyurethane Flooring Food Industry": {
     intro:
       "Engineered epoxy systems from thin-film coatings to heavy-duty screeds — assessed by product, load, traffic and hygiene requirements.",
     bullets: [
@@ -177,7 +177,7 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   Waterproofing: Droplets,
-  "Epoxy Flooring": Layers,
+  "Polyurethane Flooring Food Industry": Layers,
   "PU Flooring": Shield,
   "Di-Electric Flooring": Sparkles,
   "Concrete Polishing": Gem,
