@@ -1,8 +1,8 @@
 import { Phone, Headphones, MessageCircle } from "lucide-react";
 import { useEnquiry } from "@/components/EnquiryDialog";
 
-const PHONE = "+910000000000";
-const WHATSAPP = "910000000000";
+const PHONE = "+919444018098";
+const WHATSAPP = "919444018098";
 
 export function FloatingContactMenu() {
   const { open } = useEnquiry();

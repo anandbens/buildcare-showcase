@@ -29,11 +29,14 @@ export function Header() {
             <span>ISO Driven Quality Systems</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+910000000000" className="flex items-center gap-1.5 hover:text-brand">
-              <Phone className="h-3 w-3" /> +91 00000 00000
+            <a href="tel:+919444018098" className="flex items-center gap-1.5 hover:text-brand">
+              <Phone className="h-3 w-3" /> +91 94440 18098
             </a>
-            <a href="mailto:info@chennaibuildcare.com" className="hover:text-brand">
-              info@chennaibuildcare.com
+            <a href="tel:+917010342011" className="flex items-center gap-1.5 hover:text-brand">
+              <Phone className="h-3 w-3" /> +91 70103 42011
+            </a>
+            <a href="mailto:veshiva@gmail.com" className="hover:text-brand">
+              veshiva@gmail.com
             </a>
           </div>
         </div>
