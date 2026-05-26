@@ -221,8 +221,8 @@ export const PROJECTS: Project[] = [
 
   // Epoxy Flooring
   {
-    slug: "epoxy-flooring-warehouse",
-    title: "Epoxy Self-Smoothing — Warehouse",
+    slug: "pu-flooring-food-industry",
+    title: "Polyurethane Flooring Food Industry",
     category: "Epoxy Flooring",
     status: "completed",
     image: epoxy1,
@@ -283,8 +283,8 @@ export const PROJECTS: Project[] = [
     gallery: [polish1, polish2, polish3],
   },
   {
-    slug: "concrete-polishing-office",
-    title: "Polished Concrete — Corporate Office",
+    slug: "concrete-polishing-manufacturing",
+    title: "Polished Concrete — Manufacturing Industry",
     category: "Concrete Polishing",
     status: "completed",
     image: polish2,
