@@ -152,12 +152,23 @@ function ClientsPage() {
 
                   <div className="relative h-full w-full flex flex-col items-center justify-between p-5">
                     <div className="flex-1 w-full flex items-center justify-center">
-                      <img
-                        src={c.logo}
-                        alt={`${c.name} logo`}
-                        loading="lazy"
-                        className="max-h-[70%] max-w-[80%] w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-110"
-                      />
+                      {c.logo ? (
+                        <img
+                          src={c.logo}
+                          alt={`${c.name} logo`}
+                          loading="lazy"
+                          className="max-h-[70%] max-w-[80%] w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="flex flex-col items-center justify-center text-center gap-2">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand/15 to-brand/5 ring-1 ring-brand/20 transition-transform duration-500 group-hover:scale-110">
+                            <Icon className="h-5 w-5 text-brand" />
+                          </div>
+                          <div className="text-sm font-bold tracking-tight text-slate-800 leading-tight">
+                            {c.name}
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <div className="mt-3 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-slate-500 group-hover:text-brand transition-colors">
                       <Icon className="h-3 w-3" />
