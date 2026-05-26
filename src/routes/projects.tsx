@@ -2,14 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { PROJECTS, CATEGORIES, type ProjectStatus } from "@/data/projects";
 import {
-  MapPin,
   ArrowUpRight,
   Sparkles,
   Building2,
   CheckCircle2,
   Clock,
   Layers3,
-  Calendar,
 } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
