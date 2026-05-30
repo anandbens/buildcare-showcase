@@ -104,11 +104,6 @@ function ProjectsPage() {
               and infrastructure sectors — delivered by qualified civil engineers.
             </p>
 
-            <div className="mt-8 flex items-center gap-8 fade-in-up">
-              <Stat value={`${totalCompleted}+`} label="Completed" />
-              <Stat value={`${totalOngoing}+`} label="Ongoing" />
-              <Stat value={`${CATEGORIES.length}`} label="Categories" />
-            </div>
           </div>
         </div>
       </section>
@@ -189,7 +184,7 @@ function ProjectsPage() {
           )}
 
           {CATEGORIES.filter((c) => groupedByCategory[c]?.length).map((c, sectionIdx) => (
-            <section key={c} className="scroll-mt-32">
+            <section key={c} id={`cat-${slugify(c)}`} className="scroll-mt-32">
               {/* Section header */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12 pb-6 border-b border-slate-200/80 relative">
                 <span className="absolute left-0 -bottom-px h-[2px] w-24 bg-gradient-to-r from-brand to-transparent" />
@@ -231,21 +226,6 @@ function ProjectsPage() {
                       {/* Premium gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/85 via-[#0f172a]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                      {/* Status chip */}
-                      <div
-                        className={`absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest shadow-lg backdrop-blur-md ring-1 ${
-                          p.status === "completed"
-                            ? "bg-emerald-500/95 text-white ring-emerald-300/50 shadow-emerald-500/30"
-                            : "bg-brand/95 text-brand-foreground ring-brand/30 shadow-brand/40"
-                        }`}
-                      >
-                        <span
-                          className={`h-1.5 w-1.5 rounded-full bg-white ${
-                            p.status === "ongoing" ? "animate-pulse" : ""
-                          }`}
-                        />
-                        {p.status}
-                      </div>
 
 
                       {/* Hover CTA */}
