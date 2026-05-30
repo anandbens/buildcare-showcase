@@ -16,7 +16,7 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-4 text-sm opacity-80 leading-relaxed">
-            Pioneering innovative concrete solutions since 1998. World-class waterproofing,
+            Pioneering innovative concrete solutions since 2011. World-class waterproofing,
             industrial flooring, polished concrete and structural rehabilitation services.
           </p>
         </div>
