@@ -100,7 +100,7 @@ function AboutPage() {
         <div className="relative container-x py-16 md:py-20 lg:py-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand ring-1 ring-white/15 fade-in-up">
-              <Sparkles className="h-3.5 w-3.5" /> Since 1998
+              <Sparkles className="h-3.5 w-3.5" /> Since 2011
             </div>
             <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance fade-in-up">
               Engineering trust into every{" "}
@@ -114,27 +114,6 @@ function AboutPage() {
               specialising in world-class, economical and sustainable construction chemical
               solutions across India.
             </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 fade-in-up">
-              <div>
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
-                  25+
-                </div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Years</div>
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
-                  1200+
-                </div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Projects</div>
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">
-                  12L+
-                </div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Sq.m</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -148,15 +127,18 @@ function AboutPage() {
               <span className="h-px w-8 bg-brand" /> Our story
             </p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              25 years of pioneering{" "}
+              15 years of pioneering{" "}
               <span className="bg-gradient-brand bg-clip-text text-transparent">
                 innovative concrete solutions.
               </span>
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              (2011 - 2026)
+            </p>
             <p className="text-muted-foreground leading-relaxed text-lg">
               Chennai Buildcare Technologies is synonymous with world-class, innovative concrete
               solutions that are economical and score high on the sustainability front. Established
-              in 1998, we have made rapid inroads across waterproofing, repairs & rehabilitation,
+              in 2011, we have made rapid inroads across waterproofing, repairs & rehabilitation,
               epoxy / PU flooring, concrete grinding & polishing, grouting, and acid-proof
               treatments.
             </p>
@@ -171,24 +153,10 @@ function AboutPage() {
             <div className="relative rounded-3xl border bg-card/60 backdrop-blur-xl p-8 shadow-elegant">
               <img
                 src={badge}
-                alt="25 years celebration"
+                alt="15 years celebration"
                 className="mx-auto h-56 w-56 object-contain"
                 loading="lazy"
               />
-              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                {[
-                  { n: "25+", l: "Years" },
-                  { n: "1200+", l: "Projects" },
-                  { n: "12L+", l: "Sq.m" },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-xl bg-secondary/60 py-3">
-                    <div className="text-xl font-bold text-primary">{s.n}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                      {s.l}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
