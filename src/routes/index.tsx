@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import {
@@ -22,20 +23,6 @@ import { PROJECTS, CATEGORIES } from "@/data/projects";
 import heroCover from "@/assets/brand/hero-cover.jpg";
 import badge from "@/assets/brand/25years.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Chennai Buildcare Technologies — Concrete & Construction Chemical Experts" },
-      {
-        name: "description",
-        content:
-          "Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years.",
-      },
-    ],
-  }),
-  component: HomePage,
-});
-
 const SERVICE_ICONS: Record<string, typeof Droplets> = {
   Waterproofing: Droplets,
   "Polyurethane Flooring Food Industry": Layers,
@@ -54,6 +41,8 @@ function HomePage() {
 
   return (
     <>
+      <Helmet><title>{"Chennai Buildcare Technologies — Concrete & Construction Chemical Experts"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years."} /></Helmet>
+      
       {/* ========== HERO ========== */}
       <section className="relative isolate overflow-hidden min-h-[92vh] flex items-center bg-[#0a1020]">
         {/* Background image + overlays */}
@@ -336,8 +325,7 @@ function HomePage() {
           <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featured.map((p, i) => (
               <Link
-                to="/projects/$slug"
-                params={{ slug: p.slug }}
+                to={`/projects/${p.slug}`}
                 key={p.slug}
                 style={{ animationDelay: `${i * 80}ms` }}
                 className="group relative block overflow-hidden rounded-3xl bg-card ring-1 ring-slate-200/80 shadow-sm hover:shadow-[0_30px_60px_-20px_rgba(15,23,42,0.3)] transition-all duration-500 hover:-translate-y-1 fade-in-up"
@@ -473,3 +461,5 @@ function HomePage() {
     </>
   );
 }
+
+export default HomePage;

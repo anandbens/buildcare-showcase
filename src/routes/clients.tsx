@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { CLIENTS } from "@/data/clients";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
@@ -24,21 +25,6 @@ import {
   Home,
   Briefcase,
 } from "lucide-react";
-
-export const Route = createFileRoute("/clients")({
-  head: () => ({
-    meta: [
-      { title: "Our Clients — Chennai Buildcare Technologies" },
-      {
-        name: "description",
-        content:
-          "Trusted by leading brands across automotive, pharma, FMCG, hospitality and infrastructure — see our complete client list.",
-      },
-      { property: "og:title", content: "Our Clients — Chennai Buildcare Technologies" },
-    ],
-  }),
-  component: ClientsPage,
-});
 
 const SECTOR_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   Automotive: Car,
@@ -73,6 +59,8 @@ function ClientsPage() {
 
   return (
     <>
+      <Helmet><title>{"Our Clients — Chennai Buildcare Technologies"}</title><meta name="description" content={"Trusted by leading brands across automotive, pharma, FMCG, hospitality and infrastructure — see our complete client list."} /><meta property="og:title" content={"Our Clients — Chennai Buildcare Technologies"} /></Helmet>
+      
       {/* === HERO === */}
       <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
         <div
@@ -271,3 +259,5 @@ function StatCard({
     </div>
   );
 }
+
+export default ClientsPage;

@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useMemo, useState } from "react";
 import { PROJECTS, CATEGORIES, type ProjectStatus } from "@/data/projects";
 import {
@@ -9,21 +10,6 @@ import {
   Clock,
   Layers3,
 } from "lucide-react";
-
-export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Our Projects — Chennai Buildcare Technologies" },
-      {
-        name: "description",
-        content:
-          "Browse our completed and ongoing projects across waterproofing, Polyurethane Flooring Food Industry, polished concrete and structural retrofitting.",
-      },
-      { property: "og:title", content: "Our Projects — Chennai Buildcare Technologies" },
-    ],
-  }),
-  component: ProjectsPage,
-});
 
 function ProjectsPage() {
   const [tab, setTab] = useState<ProjectStatus>("completed");
@@ -48,6 +34,8 @@ function ProjectsPage() {
 
   return (
     <>
+      <Helmet><title>{"Our Projects — Chennai Buildcare Technologies"}</title><meta name="description" content={"Browse our completed and ongoing projects across waterproofing, Polyurethane Flooring Food Industry, polished concrete and structural retrofitting."} /><meta property="og:title" content={"Our Projects — Chennai Buildcare Technologies"} /></Helmet>
+      
       {/* === HERO === */}
       <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
         <div className="absolute inset-0">
@@ -197,8 +185,7 @@ function ProjectsPage() {
               <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                 {groupedByCategory[c].map((p, i) => (
                   <Link
-                    to="/projects/$slug"
-                    params={{ slug: p.slug }}
+                    to={`/projects/${p.slug}`}
                     key={p.slug}
                     className="group relative flex flex-col overflow-hidden rounded-[28px] bg-white border border-slate-200/70 shadow-[0_10px_40px_-20px_rgba(15,23,42,0.18)] hover:shadow-[0_36px_70px_-24px_rgba(15,23,42,0.28)] hover:-translate-y-2 hover:border-slate-300/80 transition-all duration-500 ease-out fade-in-up"
                     style={{ animationDelay: `${i * 90}ms` }}
@@ -323,3 +310,5 @@ function FilterChip({
     </button>
   );
 }
+
+export default ProjectsPage;

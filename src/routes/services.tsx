@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { CATEGORIES, PROJECTS } from "@/data/projects";
 import { Button } from "@/components/ui/button";
@@ -26,21 +27,6 @@ import {
   PanelTop,
   Columns3,
 } from "lucide-react";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Chennai Buildcare Technologies" },
-      {
-        name: "description",
-        content:
-          "Waterproofing, Polyurethane Flooring Food Industry, concrete grinding & polishing, repair & retrofitting, grouting and acid-proof treatments — engineered systems with warranty.",
-      },
-      { property: "og:title", content: "Services — Chennai Buildcare Technologies" },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
   Waterproofing: {
@@ -208,6 +194,8 @@ function ServicesPage() {
 
   return (
     <>
+      <Helmet><title>{"Services — Chennai Buildcare Technologies"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, concrete grinding & polishing, repair & retrofitting, grouting and acid-proof treatments — engineered systems with warranty."} /><meta property="og:title" content={"Services — Chennai Buildcare Technologies"} /></Helmet>
+      
       {/* === HERO === */}
       <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
         <div className="absolute inset-0">
@@ -394,7 +382,6 @@ function ServicesPage() {
                       </button>
                       <Link
                         to="/projects"
-                        search={{}}
                         className="group/btn inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-xl text-slate-800 px-6 py-3 text-sm font-bold uppercase tracking-wider border border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
                       >
                         View Projects
@@ -453,3 +440,5 @@ function Stat({ value, label }: { value: string; label: string }) {
 function slugify(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
+
+export default ServicesPage;
