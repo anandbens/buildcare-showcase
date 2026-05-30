@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import logo from "@/assets/brand/logo.jpg";
@@ -24,9 +24,7 @@ export function Header() {
       <div className="hidden md:block bg-primary text-primary-foreground text-xs">
         <div className="container-x flex items-center justify-between py-2">
           <div className="flex gap-5 opacity-90">
-            <span>25 Years of Excellence · 1998 – 2023</span>
-            <span>·</span>
-            <span>ISO Driven Quality Systems</span>
+            <span>15 Years of Excellence Since 2011</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="tel:+919444018098" className="flex items-center gap-1.5 hover:text-brand">
@@ -35,8 +33,8 @@ export function Header() {
             <a href="tel:+917010342011" className="flex items-center gap-1.5 hover:text-brand">
               <Phone className="h-3 w-3" /> +91 70103 42011
             </a>
-            <a href="mailto:veshiva@gmail.com" className="hover:text-brand">
-              veshiva@gmail.com
+            <a href="mailto:veshiva@gmail.com" className="flex items-center gap-1.5 hover:text-brand">
+              <Mail className="h-3 w-3" /> veshiva@gmail.com
             </a>
           </div>
         </div>
