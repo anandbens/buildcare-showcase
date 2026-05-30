@@ -58,8 +58,6 @@ function ProjectsPage() {
     return acc;
   }, {});
 
-  const totalCompleted = PROJECTS.filter((p) => p.status === "completed").length;
-  const totalOngoing = PROJECTS.filter((p) => p.status === "ongoing").length;
   const featured = PROJECTS.find((p) => p.status === "completed") ?? PROJECTS[0];
 
   return (
