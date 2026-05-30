@@ -382,7 +382,6 @@ function ServicesPage() {
                       </button>
                       <Link
                         to="/projects"
-                        search={{}}
                         className="group/btn inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-xl text-slate-800 px-6 py-3 text-sm font-bold uppercase tracking-wider border border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
                       >
                         View Projects
