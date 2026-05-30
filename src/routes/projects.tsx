@@ -45,6 +45,21 @@ function ProjectsPage() {
     }
   }, [searchParams]);
 
+  const selectCategory = (cat: "All" | (typeof CATEGORIES)[number]) => {
+    setCategory(cat);
+    if (cat !== "All") {
+      const hasCompleted = PROJECTS.some((p) => p.category === cat && p.status === "completed");
+      if (!hasCompleted) setTab("ongoing");
+      const id = `cat-${slugify(cat)}`;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      });
+    }
+  };
+
   const filtered = useMemo(
     () =>
       PROJECTS.filter(
