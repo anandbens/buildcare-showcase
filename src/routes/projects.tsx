@@ -287,14 +287,6 @@ function ProjectsPage() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="border-l-2 border-brand/60 pl-4">
-      <div className="text-3xl md:text-4xl font-bold text-white">{value}</div>
-      <div className="mt-1 text-xs uppercase tracking-widest text-white/60">{label}</div>
-    </div>
-  );
-}
 
 function FilterChip({
   active,
