@@ -75,7 +75,7 @@ function HomePage() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-xl ring-1 ring-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 fade-in-up">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f59e3a] animate-pulse" />
-              <Award className="h-3.5 w-3.5 text-[#f59e3a]" /> Trusted since 1998 · 25+ Years
+              <Award className="h-3.5 w-3.5 text-[#f59e3a]" /> Trusted since 2011 · 15 Years
             </div>
 
             <h1 className="mt-7 text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-balance leading-[1.02] tracking-tight fade-in-up">
