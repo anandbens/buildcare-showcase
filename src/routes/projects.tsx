@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PROJECTS, CATEGORIES, type ProjectStatus } from "@/data/projects";
 import {
   ArrowUpRight,
@@ -11,9 +11,39 @@ import {
   Layers3,
 } from "lucide-react";
 
+function slugify(s: string) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function ProjectsPage() {
+  const [searchParams] = useSearchParams();
+  const initialCategory = (() => {
+    const c = searchParams.get("category");
+    if (c && (CATEGORIES as readonly string[]).includes(c)) return c as (typeof CATEGORIES)[number];
+    return "All" as const;
+  })();
   const [tab, setTab] = useState<ProjectStatus>("completed");
-  const [category, setCategory] = useState<"All" | (typeof CATEGORIES)[number]>("All");
+  const [category, setCategory] = useState<"All" | (typeof CATEGORIES)[number]>(initialCategory);
+
+  // React to URL changes (e.g. arriving from a Service page) and scroll to the matching section.
+  useEffect(() => {
+    const c = searchParams.get("category");
+    if (c && (CATEGORIES as readonly string[]).includes(c)) {
+      const cat = c as (typeof CATEGORIES)[number];
+      setCategory(cat);
+      // If the selected category has no completed projects, fall back to ongoing tab.
+      const hasCompleted = PROJECTS.some((p) => p.category === cat && p.status === "completed");
+      if (!hasCompleted) setTab("ongoing");
+      // Wait for layout, then smooth-scroll to the category section.
+      const id = `cat-${slugify(cat)}`;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      });
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(
     () =>
