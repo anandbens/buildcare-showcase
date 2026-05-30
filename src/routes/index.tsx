@@ -352,7 +352,7 @@ function HomePage() {
             {[
               { icon: Users, t: "Civil engineers at the helm", d: "Every project is led by qualified civil engineers — not just supervisors." },
               { icon: ShieldCheck, t: "Warrantied systems", d: "Brand-backed waterproofing & flooring systems with long-term performance warranties." },
-              { icon: Award, t: "25 years of trust", d: "An unbroken track record of prestigious projects across India and abroad." },
+              { icon: Award, t: "15 years of trust", d: "An unbroken track record of prestigious projects across India and abroad." },
             ].map((v, i) => (
               <div
                 key={v.t}
