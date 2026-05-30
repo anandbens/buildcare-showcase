@@ -139,17 +139,33 @@ function ProjectsPage() {
             })}
           </div>
 
-          {/* Category chips */}
-          <div className="flex flex-wrap gap-2">
-            <FilterChip active={category === "All"} onClick={() => setCategory("All")}>
+          {/* Category chips — desktop */}
+          <div className="hidden md:flex flex-wrap gap-2">
+            <FilterChip active={category === "All"} onClick={() => selectCategory("All")}>
               <Layers3 className="h-3.5 w-3.5" />
               All
             </FilterChip>
             {CATEGORIES.map((c) => (
-              <FilterChip key={c} active={category === c} onClick={() => setCategory(c)}>
+              <FilterChip key={c} active={category === c} onClick={() => selectCategory(c)}>
                 {c}
               </FilterChip>
             ))}
+          </div>
+
+          {/* Category dropdown — mobile */}
+          <div className="md:hidden w-full">
+            <label htmlFor="category-select" className="sr-only">Select category</label>
+            <select
+              id="category-select"
+              value={category}
+              onChange={(e) => selectCategory(e.target.value as "All" | (typeof CATEGORIES)[number])}
+              className="w-full rounded-full bg-white border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand"
+            >
+              <option value="All">All Categories</option>
+              {CATEGORIES.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
           </div>
         </div>
       </section>
