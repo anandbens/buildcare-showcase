@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,21 +7,6 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { CATEGORIES } from "@/data/projects";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Chennai Buildcare Technologies" },
-      {
-        name: "description",
-        content:
-          "Visit or call our Chennai, Coimbatore and Tirupur offices. Send us a project enquiry and our civil engineers will respond within 24 hours.",
-      },
-      { property: "og:title", content: "Contact Chennai Buildcare Technologies" },
-    ],
-  }),
-  component: ContactPage,
-});
 
 const OFFICES = [
   {
@@ -43,6 +28,8 @@ function ContactPage() {
 
   return (
     <>
+      <Helmet><title>{"Contact — Chennai Buildcare Technologies"}</title><meta name="description" content={"Visit or call our Chennai, Coimbatore and Tirupur offices. Send us a project enquiry and our civil engineers will respond within 24 hours."} /><meta property="og:title" content={"Contact Chennai Buildcare Technologies"} /></Helmet>
+      
       <PageHero
         eyebrow="Contact Us"
         title="Let's start your project."
@@ -160,3 +147,5 @@ function ContactPage() {
     </>
   );
 }
+
+export default ContactPage;

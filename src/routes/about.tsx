@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import {
@@ -15,22 +16,6 @@ import {
 import heroCover from "@/assets/brand/hero-cover.jpg";
 import badge from "@/assets/brand/25years.jpg";
 import equipmentShowcase from "@/assets/brand/equipment-showcase.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Chennai Buildcare Technologies" },
-      {
-        name: "description",
-        content:
-          "Established in 1998, Chennai Buildcare Technologies is a professional civil engineering company specialising in construction chemical solutions across India.",
-      },
-      { property: "og:title", content: "About Chennai Buildcare Technologies" },
-      { property: "og:description", content: "25 years pioneering innovative concrete solutions." },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const EQUIPMENT = [
   "Surface Preparation Machines",
@@ -84,6 +69,8 @@ function AboutPage() {
   const { open } = useEnquiry();
   return (
     <>
+      <Helmet><title>{"About — Chennai Buildcare Technologies"}</title><meta name="description" content={"Established in 1998, Chennai Buildcare Technologies is a professional civil engineering company specialising in construction chemical solutions across India."} /><meta property="og:title" content={"About Chennai Buildcare Technologies"} /><meta property="og:description" content={"25 years pioneering innovative concrete solutions."} /></Helmet>
+      
       {/* === HERO === */}
       <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
         <div className="absolute inset-0">
@@ -410,3 +397,5 @@ function AboutPage() {
     </>
   );
 }
+
+export default AboutPage;
