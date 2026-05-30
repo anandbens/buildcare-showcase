@@ -381,7 +381,7 @@ function ServicesPage() {
                         <ArrowUpRight className="h-4 w-4 group-hover/btn:rotate-45 transition-transform duration-300" />
                       </button>
                       <Link
-                        to="/projects"
+                        to={`/projects?category=${encodeURIComponent(c)}`}
                         className="group/btn inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-xl text-slate-800 px-6 py-3 text-sm font-bold uppercase tracking-wider border border-slate-200 hover:border-brand hover:text-brand hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
                       >
                         View Projects

@@ -50,14 +50,16 @@ function ProjectDetail() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-primary/30" />
         </div>
         <div className="relative container-x py-20 md:py-28 text-primary-foreground">
-          <Link
-            to="/projects"
-            className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-brand fade-in-up"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to all projects
-          </Link>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand text-brand-foreground px-3 py-1 text-xs font-semibold uppercase tracking-widest fade-in-up">
-            {project.category} · {project.status}
+          <div>
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-brand fade-in-up"
+            >
+              <ArrowLeft className="h-4 w-4" /> Back to all projects
+            </Link>
+          </div>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand text-brand-foreground px-3 py-1 text-xs font-semibold uppercase tracking-widest fade-in-up">
+            {project.category}
           </div>
           <h1 className="mt-4 text-4xl md:text-6xl font-bold text-balance max-w-4xl fade-in-up">
             {project.title}
