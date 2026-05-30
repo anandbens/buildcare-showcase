@@ -141,7 +141,7 @@ function HomePage() {
               </span>
             </h2>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              Established in 1998, Chennai Buildcare Technologies has become the preferred choice
+              Established in 2011, Chennai Buildcare Technologies has become the preferred choice
               for industrial clients across India through a stringent commitment to quality and a
               top management team comprised entirely of qualified civil engineers.
             </p>
