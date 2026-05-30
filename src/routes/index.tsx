@@ -110,26 +110,6 @@ function HomePage() {
               </Link>
             </div>
 
-            {/* Glass stats */}
-            <dl className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl fade-in-up">
-              {[
-                { k: "25+", v: "Years of Expertise" },
-                { k: "12L+", v: "Sq.m Industrial Flooring" },
-                { k: "500+", v: "Projects Delivered" },
-                { k: "100+", v: "Marquee Clients" },
-              ].map((s) => (
-                <div
-                  key={s.v}
-                  className="group relative overflow-hidden rounded-2xl bg-white/[0.04] backdrop-blur-xl ring-1 ring-white/10 p-5 transition-all hover:ring-[#f59e3a]/40 hover:bg-white/[0.07]"
-                >
-                  <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-[#f59e3a]/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <dt className="relative text-3xl md:text-4xl font-bold bg-gradient-to-br from-white to-white/60 bg-clip-text text-transparent">
-                    {s.k}
-                  </dt>
-                  <dd className="relative text-xs text-white/60 mt-1.5 uppercase tracking-wider">{s.v}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
 

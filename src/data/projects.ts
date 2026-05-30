@@ -135,7 +135,7 @@ export const PROJECTS: Project[] = [
     image: wpPvc,
     location: "Chennai, Tamil Nadu",
     client: "Multi-Specialty Hospital",
-    year: "2024",
+    year: "2013",
     area: "3,500 sq.m",
     summary:
       "1.5 mm reinforced PVC membrane installed over insulated rooftop with full perimeter detailing for a working hospital campus.",
@@ -196,7 +196,7 @@ export const PROJECTS: Project[] = [
     image: pu2,
     location: "Erode, Tamil Nadu",
     client: "Dairy Processing",
-    year: "2024",
+    year: "2016",
     area: "2,800 sq.m",
     summary:
       "3 mm PU self-smoothing system over treated concrete for hygienic, chemical-resistant flooring in a dairy plant.",
@@ -275,7 +275,7 @@ export const PROJECTS: Project[] = [
     image: polish1,
     location: "Chennai, Tamil Nadu",
     client: "Retail Brand",
-    year: "2024",
+    year: "2012",
     area: "1,800 sq.m",
     summary:
       "8-step diamond polishing with densifier and lithium guard to deliver a mirror-gloss concrete finish.",
@@ -321,7 +321,7 @@ export const PROJECTS: Project[] = [
     image: polish4,
     location: "Chennai, Tamil Nadu",
     client: "Hospitality Group",
-    year: "2024",
+    year: "2017",
     area: "1,100 sq.m",
     summary:
       "Custom-colour dyed and polished concrete for a premium hospitality lounge, with seamless transitions across zones.",
@@ -453,7 +453,7 @@ export const PROJECTS: Project[] = [
     image: grout2,
     location: "Chennai, Tamil Nadu",
     client: "Commercial Building",
-    year: "2024",
+    year: "2014",
     summary:
       "Low-viscosity epoxy resin injection to seal structural cracks and restore monolithic action.",
     scope: ["Crack mapping & port drilling", "Two-component epoxy injection", "Surface sealing"],
@@ -498,7 +498,7 @@ export const PROJECTS: Project[] = [
     image: insul2,
     location: "Tamil Nadu",
     client: "Warehouse",
-    year: "2024",
+    year: "2015",
     summary:
       "Specialised mechanical fastening for insulation boards over a profiled steel deck roof.",
     scope: ["Layout & marking", "Mechanical fastening with stress plates", "QA pull-out testing"],

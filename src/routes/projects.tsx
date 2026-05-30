@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PROJECTS, CATEGORIES, type ProjectStatus } from "@/data/projects";
 import {
   ArrowUpRight,
@@ -11,9 +11,39 @@ import {
   Layers3,
 } from "lucide-react";
 
+function slugify(s: string) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function ProjectsPage() {
+  const [searchParams] = useSearchParams();
+  const initialCategory = (() => {
+    const c = searchParams.get("category");
+    if (c && (CATEGORIES as readonly string[]).includes(c)) return c as (typeof CATEGORIES)[number];
+    return "All" as const;
+  })();
   const [tab, setTab] = useState<ProjectStatus>("completed");
-  const [category, setCategory] = useState<"All" | (typeof CATEGORIES)[number]>("All");
+  const [category, setCategory] = useState<"All" | (typeof CATEGORIES)[number]>(initialCategory);
+
+  // React to URL changes (e.g. arriving from a Service page) and scroll to the matching section.
+  useEffect(() => {
+    const c = searchParams.get("category");
+    if (c && (CATEGORIES as readonly string[]).includes(c)) {
+      const cat = c as (typeof CATEGORIES)[number];
+      setCategory(cat);
+      // If the selected category has no completed projects, fall back to ongoing tab.
+      const hasCompleted = PROJECTS.some((p) => p.category === cat && p.status === "completed");
+      if (!hasCompleted) setTab("ongoing");
+      // Wait for layout, then smooth-scroll to the category section.
+      const id = `cat-${slugify(cat)}`;
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      });
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(
     () =>
@@ -28,8 +58,6 @@ function ProjectsPage() {
     return acc;
   }, {});
 
-  const totalCompleted = PROJECTS.filter((p) => p.status === "completed").length;
-  const totalOngoing = PROJECTS.filter((p) => p.status === "ongoing").length;
   const featured = PROJECTS.find((p) => p.status === "completed") ?? PROJECTS[0];
 
   return (
@@ -74,11 +102,6 @@ function ProjectsPage() {
               and infrastructure sectors — delivered by qualified civil engineers.
             </p>
 
-            <div className="mt-8 flex items-center gap-8 fade-in-up">
-              <Stat value={`${totalCompleted}+`} label="Completed" />
-              <Stat value={`${totalOngoing}+`} label="Ongoing" />
-              <Stat value={`${CATEGORIES.length}`} label="Categories" />
-            </div>
           </div>
         </div>
       </section>
@@ -159,7 +182,7 @@ function ProjectsPage() {
           )}
 
           {CATEGORIES.filter((c) => groupedByCategory[c]?.length).map((c, sectionIdx) => (
-            <section key={c} className="scroll-mt-32">
+            <section key={c} id={`cat-${slugify(c)}`} className="scroll-mt-32">
               {/* Section header */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12 pb-6 border-b border-slate-200/80 relative">
                 <span className="absolute left-0 -bottom-px h-[2px] w-24 bg-gradient-to-r from-brand to-transparent" />
@@ -201,21 +224,6 @@ function ProjectsPage() {
                       {/* Premium gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/85 via-[#0f172a]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                      {/* Status chip */}
-                      <div
-                        className={`absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest shadow-lg backdrop-blur-md ring-1 ${
-                          p.status === "completed"
-                            ? "bg-emerald-500/95 text-white ring-emerald-300/50 shadow-emerald-500/30"
-                            : "bg-brand/95 text-brand-foreground ring-brand/30 shadow-brand/40"
-                        }`}
-                      >
-                        <span
-                          className={`h-1.5 w-1.5 rounded-full bg-white ${
-                            p.status === "ongoing" ? "animate-pulse" : ""
-                          }`}
-                        />
-                        {p.status}
-                      </div>
 
 
                       {/* Hover CTA */}
@@ -279,14 +287,6 @@ function ProjectsPage() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="border-l-2 border-brand/60 pl-4">
-      <div className="text-3xl md:text-4xl font-bold text-white">{value}</div>
-      <div className="mt-1 text-xs uppercase tracking-widest text-white/60">{label}</div>
-    </div>
-  );
-}
 
 function FilterChip({
   active,
