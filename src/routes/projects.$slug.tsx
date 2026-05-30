@@ -1,5 +1,6 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getProject, PROJECTS, type Project } from "@/data/projects";
+import { Link, useParams, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { getProject, PROJECTS } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import {
@@ -11,37 +12,22 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowLeft, MapPin, Calendar, Building, Ruler, Check, ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/projects/$slug")({
-  loader: ({ params }): { project: Project } => {
-    const project = getProject(params.slug);
-    if (!project) throw notFound();
-    return { project };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.project.title} — Chennai Buildcare Technologies` },
-          { name: "description", content: loaderData.project.summary },
-          { property: "og:title", content: loaderData.project.title },
-          { property: "og:description", content: loaderData.project.summary },
-          { property: "og:image", content: loaderData.project.image },
-        ]
-      : [{ title: "Project — Chennai Buildcare Technologies" }],
-  }),
-  component: ProjectDetail,
-  notFoundComponent: () => (
-    <div className="container-x py-32 text-center">
-      <h1 className="text-3xl font-bold">Project not found</h1>
-      <Button asChild variant="brand" className="mt-6">
-        <Link to="/projects">Back to all projects</Link>
-      </Button>
-    </div>
-  ),
-});
-
 function ProjectDetail() {
-  const { project } = Route.useLoaderData() as { project: Project };
+  const { slug } = useParams<{ slug: string }>();
+  const project = slug ? getProject(slug) : undefined;
   const { open } = useEnquiry();
+
+  if (!project) {
+    return (
+      <div className="container-x py-32 text-center">
+        <Helmet><title>Project not found — Chennai Buildcare Technologies</title></Helmet>
+        <h1 className="text-3xl font-bold">Project not found</h1>
+        <Button asChild variant="brand" className="mt-6">
+          <Link to="/projects">Back to all projects</Link>
+        </Button>
+      </div>
+    );
+  }
 
   const related = PROJECTS.filter(
     (p) => p.category === project.category && p.slug !== project.slug,
@@ -49,6 +35,14 @@ function ProjectDetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{`${project.title} — Chennai Buildcare Technologies`}</title>
+        <meta name="description" content={project.summary} />
+        <meta property="og:title" content={project.title} />
+        <meta property="og:description" content={project.summary} />
+        <meta property="og:image" content={project.image} />
+      </Helmet>
+
       {/* Hero banner */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0">
@@ -77,7 +71,6 @@ function ProjectDetail() {
       <section className="py-16">
         <div className="container-x grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 space-y-10">
-            {/* Carousel */}
             <Carousel className="w-full">
               <CarouselContent>
                 {project.gallery.map((g, i) => (
@@ -104,7 +97,6 @@ function ProjectDetail() {
               </ul>
             </div>
 
-            {/* Gallery grid */}
             <div>
               <h2 className="text-2xl font-bold">Project gallery</h2>
               <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -121,7 +113,6 @@ function ProjectDetail() {
             </div>
           </div>
 
-          {/* Sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-28 space-y-6">
               <div className="rounded-2xl border bg-card p-6">
@@ -160,8 +151,7 @@ function ProjectDetail() {
             <div className="grid md:grid-cols-3 gap-6">
               {related.map((p) => (
                 <Link
-                  to="/projects/$slug"
-                  params={{ slug: p.slug }}
+                  to={`/projects/${p.slug}`}
                   key={p.slug}
                   className="group block overflow-hidden rounded-2xl bg-card border hover:shadow-elegant transition"
                 >
@@ -193,3 +183,5 @@ function Row({ icon: Icon, label, value }: { icon: typeof MapPin; label: string;
     </div>
   );
 }
+
+export default ProjectDetail;
