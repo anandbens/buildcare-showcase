@@ -41,7 +41,7 @@ function HomePage() {
 
   return (
     <>
-      <Helmet><title>{"Chennai Buildcare Technologies — Concrete & Construction Chemical Experts"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years."} /></Helmet>
+      <Helmet><title>{"Chennai Buildcare Technologies — Concrete & Construction Chemical Experts"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 15 years."} /></Helmet>
       
       {/* ========== HERO ========== */}
       <section className="relative isolate overflow-hidden min-h-[92vh] flex items-center bg-[#0a1020]">
@@ -75,7 +75,7 @@ function HomePage() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-xl ring-1 ring-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 fade-in-up">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f59e3a] animate-pulse" />
-              <Award className="h-3.5 w-3.5 text-[#f59e3a]" /> Trusted since 1998 · 25+ Years
+              <Award className="h-3.5 w-3.5 text-[#f59e3a]" /> Trusted since 2011 · 15 Years
             </div>
 
             <h1 className="mt-7 text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-balance leading-[1.02] tracking-tight fade-in-up">
@@ -141,7 +141,7 @@ function HomePage() {
               </span>
             </h2>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              Established in 1998, Chennai Buildcare Technologies has become the preferred choice
+              Established in 2011, Chennai Buildcare Technologies has become the preferred choice
               for industrial clients across India through a stringent commitment to quality and a
               top management team comprised entirely of qualified civil engineers.
             </p>
@@ -184,15 +184,10 @@ function HomePage() {
               <div className="absolute -bottom-6 -left-6 hidden md:block">
                 <div className="relative">
                   <div className="absolute inset-0 rounded-full bg-[#f59e3a]/40 blur-xl" />
-                  <img src={badge} alt="25 years" className="relative h-32 w-32 rounded-full bg-white p-2 shadow-2xl ring-4 ring-white" />
+                  <img src={badge} alt="15 years" className="relative h-32 w-32 rounded-full bg-white p-2 shadow-2xl ring-4 ring-white" />
                 </div>
               </div>
 
-              {/* Floating stat card */}
-              <div className="absolute -top-6 -right-6 rounded-2xl bg-white/90 backdrop-blur-xl ring-1 ring-white shadow-[0_20px_50px_-12px_rgba(15,23,42,0.3)] px-6 py-4">
-                <div className="text-3xl font-bold bg-gradient-to-br from-[#f59e3a] to-[#e07016] bg-clip-text text-transparent">12L+</div>
-                <div className="text-[10px] text-slate-600 uppercase tracking-[0.15em] font-semibold">Sq.m delivered</div>
-              </div>
 
               {/* Floating mini badge */}
               <div className="absolute top-1/2 -right-4 hidden md:flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] shadow-xl ring-1 ring-white/10">
@@ -357,7 +352,7 @@ function HomePage() {
             {[
               { icon: Users, t: "Civil engineers at the helm", d: "Every project is led by qualified civil engineers — not just supervisors." },
               { icon: ShieldCheck, t: "Warrantied systems", d: "Brand-backed waterproofing & flooring systems with long-term performance warranties." },
-              { icon: Award, t: "25 years of trust", d: "An unbroken track record of prestigious projects across India and abroad." },
+              { icon: Award, t: "15 years of trust", d: "An unbroken track record of prestigious projects across India and abroad." },
             ].map((v, i) => (
               <div
                 key={v.t}
