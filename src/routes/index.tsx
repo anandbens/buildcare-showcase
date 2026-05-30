@@ -41,7 +41,7 @@ function HomePage() {
 
   return (
     <>
-      <Helmet><title>{"Chennai Buildcare Technologies — Concrete & Construction Chemical Experts"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 25+ years."} /></Helmet>
+      <Helmet><title>{"Chennai Buildcare Technologies — Concrete & Construction Chemical Experts"}</title><meta name="description" content={"Waterproofing, Polyurethane Flooring Food Industry, polished concrete, structural retrofitting and grouting solutions delivered across India for 15 years."} /></Helmet>
       
       {/* ========== HERO ========== */}
       <section className="relative isolate overflow-hidden min-h-[92vh] flex items-center bg-[#0a1020]">
