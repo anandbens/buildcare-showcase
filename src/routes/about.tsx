@@ -69,7 +69,7 @@ function AboutPage() {
   const { open } = useEnquiry();
   return (
     <>
-      <Helmet><title>{"About — Chennai Buildcare Technologies"}</title><meta name="description" content={"Established in 1998, Chennai Buildcare Technologies is a professional civil engineering company specialising in construction chemical solutions across India."} /><meta property="og:title" content={"About Chennai Buildcare Technologies"} /><meta property="og:description" content={"25 years pioneering innovative concrete solutions."} /></Helmet>
+      <Helmet><title>{"About — Chennai Buildcare Technologies"}</title><meta name="description" content={"Established in 2011, Chennai Buildcare Technologies is a professional civil engineering company specialising in construction chemical solutions across India."} /><meta property="og:title" content={"About Chennai Buildcare Technologies"} /><meta property="og:description" content={"15 years pioneering innovative concrete solutions."} /></Helmet>
       
       {/* === HERO === */}
       <section className="relative isolate overflow-hidden bg-[#0b1220] text-white">
