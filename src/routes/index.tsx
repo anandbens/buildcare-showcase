@@ -180,13 +180,6 @@ function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1020]/70 via-transparent to-transparent" />
               </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 hidden md:block">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-full bg-[#f59e3a]/40 blur-xl" />
-                  <img src={badge} alt="15 years" className="relative h-32 w-32 rounded-full bg-white p-2 shadow-2xl ring-4 ring-white" />
-                </div>
-              </div>
 
 
               {/* Floating mini badge */}

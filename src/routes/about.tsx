@@ -14,7 +14,7 @@ import {
   Quote,
 } from "lucide-react";
 import heroCover from "@/assets/brand/hero-cover.jpg";
-import badge from "@/assets/brand/25years.jpg";
+import badge from "@/assets/brand/15years.png";
 import equipmentShowcase from "@/assets/brand/equipment-showcase.jpg";
 
 const EQUIPMENT = [

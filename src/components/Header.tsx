@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEnquiry } from "@/components/EnquiryDialog";
 import logo from "@/assets/brand/logo.jpg";
+import badge15 from "@/assets/brand/15years.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -70,10 +71,15 @@ export function Header() {
             })}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-3">
             <Button variant="brand" onClick={() => openEnquiry()}>
               Get a Quote
             </Button>
+            <img
+              src={badge15}
+              alt="15 Years Celebration 2011-2026"
+              className="h-14 w-14 rounded-full object-contain bg-white ring-2 ring-brand/30 p-0.5 shrink-0"
+            />
           </div>
 
           <button
