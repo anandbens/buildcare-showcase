@@ -315,7 +315,7 @@ function HomePage() {
                   {/* Title overlay */}
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                     <h3 className="font-semibold text-lg leading-tight line-clamp-2 drop-shadow-md">{p.title}</h3>
-                    <p className="mt-1 text-xs text-white/75">{p.location} · {p.year}</p>
+                    <p className="mt-1 text-xs text-white/75">{p.year}</p>
                   </div>
                 </div>
               </Link>
