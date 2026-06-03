@@ -72,7 +72,7 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
       "Dielectric testing & certification",
     ],
   },
-  "Concrete Polishing": {
+  "Concrete Densification": {
     intro:
       "Concrete grinding and densification delivering a durable, matt-finish floor through a controlled 3-step process.",
     bullets: [
@@ -168,7 +168,7 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "Polyurethane Flooring Food Industry": Layers,
   "PU Flooring": Shield,
   "Di-Electric Flooring": Sparkles,
-  "Concrete Polishing": Gem,
+  "Concrete Densification": Gem,
   "Concrete Grinding & Polishing": Hammer,
   "Building Repair & Retrofitting": Construction,
   Grouting: Wrench,

@@ -27,7 +27,7 @@ const SERVICE_ICONS: Record<string, typeof Droplets> = {
   Waterproofing: Droplets,
   "Polyurethane Flooring Food Industry": Layers,
   "PU Flooring": Layers,
-  "Concrete Polishing": Sparkles,
+  "Concrete Densification": Sparkles,
   "Concrete Grinding & Polishing": Sparkles,
   "Building Repair & Retrofitting": Hammer,
   Grouting: Wrench,
