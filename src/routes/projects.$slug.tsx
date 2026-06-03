@@ -102,11 +102,11 @@ function ProjectDetail() {
             {project.process && (
               <div>
                 <h2 className="text-2xl font-bold">{project.process.title}</h2>
-                <ol className="mt-5 grid sm:grid-cols-3 gap-3">
+                <ol className="mt-5 space-y-3">
                   {project.process.steps.map((s, i) => (
-                    <li key={s} className="rounded-lg border bg-card px-4 py-3 text-sm">
-                      <div className="text-xs font-bold uppercase tracking-widest text-brand">Step {i + 1}</div>
-                      <div className="mt-1">{s}</div>
+                    <li key={s} className="flex gap-3 text-sm">
+                      <span className="font-bold text-brand shrink-0">{i + 1}.</span>
+                      <span>{s}</span>
                     </li>
                   ))}
                 </ol>
