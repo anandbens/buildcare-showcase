@@ -31,6 +31,7 @@ import realEpoxyLines from "@/assets/projects/real-epoxy-lines.jpg";
 import realPuConveyor from "@/assets/projects/real-pu-conveyor.jpg";
 import realDielectricBlue from "@/assets/projects/real-dielectric-blue.jpg";
 import realConcretePolish from "@/assets/projects/real-concrete-polish.jpg";
+import concreteGrindingDensification from "@/assets/projects/concrete-grinding-densification.png.asset.json";
 
 export type ProjectCategory =
   | "Waterproofing"
