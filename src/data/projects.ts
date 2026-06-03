@@ -62,6 +62,7 @@ export interface Project {
   area?: string;
   summary: string;
   scope: string[];
+  process?: { title: string; steps: string[] };
   gallery: string[];
 }
 
