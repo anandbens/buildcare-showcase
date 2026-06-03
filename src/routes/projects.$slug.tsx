@@ -89,9 +89,9 @@ function ProjectDetail() {
 
             <div>
               <h2 className="text-2xl font-bold">Scope of work</h2>
-              <ul className="mt-5 grid sm:grid-cols-2 gap-3">
+              <ul className="mt-5 space-y-3">
                 {project.scope.map((s) => (
-                  <li key={s} className="flex gap-2 rounded-lg border bg-card px-4 py-3 text-sm">
+                  <li key={s} className="flex gap-3 text-sm">
                     <Check className="h-5 w-5 text-brand shrink-0" />
                     <span>{s}</span>
                   </li>
