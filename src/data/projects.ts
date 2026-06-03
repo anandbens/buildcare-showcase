@@ -38,7 +38,7 @@ export type ProjectCategory =
   | "Polyurethane Flooring Food Industry"
   | "PU Flooring"
   | "Di-Electric Flooring"
-  | "Concrete Polishing"
+  | "Concrete Densification"
   | "Concrete Grinding & Polishing"
   | "Building Repair & Retrofitting"
   | "Grouting"
@@ -268,11 +268,11 @@ export const PROJECTS: Project[] = [
     gallery: [epoxy3, epoxy1, epoxy2],
   },
 
-  // Concrete Polishing
+  // Concrete Densification
   {
     slug: "concrete-polishing-showroom",
     title: "Concrete Grinding and Densification",
-    category: "Concrete Polishing",
+    category: "Concrete Densification",
     status: "completed",
     image: concreteGrindingDensification.url,
     location: "Chennai, Tamil Nadu",
@@ -299,7 +299,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "concrete-polishing-manufacturing",
     title: "Polished Concrete — Manufacturing Industry",
-    category: "Concrete Polishing",
+    category: "Concrete Densification",
     status: "completed",
     image: polish2,
     location: "Bengaluru, Karnataka",
@@ -314,7 +314,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "concrete-polishing-museum",
     title: "High-Gloss Polished Concrete — Public Space",
-    category: "Concrete Polishing",
+    category: "Concrete Densification",
     status: "ongoing",
     image: polish3,
     location: "Chennai, Tamil Nadu",
@@ -610,7 +610,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const CATEGORIES: ProjectCategory[] = [
-  "Concrete Polishing",
+  "Concrete Densification",
   "Concrete Grinding & Polishing",
   "Polyurethane Flooring Food Industry",
   "PU Flooring",
