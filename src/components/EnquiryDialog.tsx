@@ -30,6 +30,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [service, setService] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const open: EnquiryCtx["open"] = (preset) => {
     setSubmitted(false);
@@ -38,10 +39,31 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   };
   const close = () => setIsOpen(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setIsOpen(false), 2200);
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/sendmail.php", {
+        method: "POST",
+        body: formData,
+      });
+      const text = await response.text();
+
+      if (text.includes("Message Sent")) {
+        setSubmitted(true);
+        setTimeout(() => setIsOpen(false), 2000);
+      } else {
+        alert(text);
+      }
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -73,25 +95,26 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name *</Label>
-                  <Input id="name" required placeholder="Your name" />
+                  <Input id="name" name="name" required placeholder="Your name" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="company">Company</Label>
-                  <Input id="company" placeholder="Company name" />
+                  <Input id="company" name="company" placeholder="Company name" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email *</Label>
-                  <Input id="email" type="email" required placeholder="you@company.com" />
+                  <Input id="email" name="email" type="email" required placeholder="you@company.com" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone *</Label>
-                  <Input id="phone" required placeholder="+91" />
+                  <Input id="phone" name="phone" required placeholder="+91" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="service">Service Required</Label>
                 <select
                   id="service"
+                  name="service"
                   value={service}
                   onChange={(e) => setService(e.target.value)}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
@@ -109,11 +132,12 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
                 <Label htmlFor="message">Project Details</Label>
                 <Textarea
                   id="message"
+                  name="message"
                   rows={3}
                   placeholder="Location, scope, approx. area, timelines…"
                 />
               </div>
-              <Button type="submit" size="lg" variant="brand" className="w-full">
+              <Button type="submit" size="lg" variant="brand" className="w-full" disabled={isSubmitting}>
                 Send Enquiry
               </Button>
             </form>
