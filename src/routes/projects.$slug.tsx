@@ -99,6 +99,20 @@ function ProjectDetail() {
               </ul>
             </div>
 
+            {project.process && (
+              <div>
+                <h2 className="text-2xl font-bold">{project.process.title}</h2>
+                <ol className="mt-5 grid sm:grid-cols-3 gap-3">
+                  {project.process.steps.map((s, i) => (
+                    <li key={s} className="rounded-lg border bg-card px-4 py-3 text-sm">
+                      <div className="text-xs font-bold uppercase tracking-widest text-brand">Step {i + 1}</div>
+                      <div className="mt-1">{s}</div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
             <div>
               <h2 className="text-2xl font-bold">Project gallery</h2>
               <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">

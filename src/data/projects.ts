@@ -31,6 +31,7 @@ import realEpoxyLines from "@/assets/projects/real-epoxy-lines.jpg";
 import realPuConveyor from "@/assets/projects/real-pu-conveyor.jpg";
 import realDielectricBlue from "@/assets/projects/real-dielectric-blue.jpg";
 import realConcretePolish from "@/assets/projects/real-concrete-polish.jpg";
+import concreteGrindingDensification from "@/assets/projects/concrete-grinding-densification.png.asset.json";
 
 export type ProjectCategory =
   | "Waterproofing"
@@ -61,6 +62,7 @@ export interface Project {
   area?: string;
   summary: string;
   scope: string[];
+  process?: { title: string; steps: string[] };
   gallery: string[];
 }
 
@@ -269,18 +271,30 @@ export const PROJECTS: Project[] = [
   // Concrete Polishing
   {
     slug: "concrete-polishing-showroom",
-    title: "Mirror Polished Concrete — Retail Showroom",
+    title: "Concrete Grinding and Densification",
     category: "Concrete Polishing",
     status: "completed",
-    image: polish1,
+    image: concreteGrindingDensification.url,
     location: "Chennai, Tamil Nadu",
     client: "Retail Brand",
     year: "2012",
     area: "1,800 sq.m",
     summary:
-      "8-step diamond polishing with densifier and lithium guard to deliver a mirror-gloss concrete finish.",
-    scope: ["Diamond grinding 30/60/120 grit", "Lithium densifier", "Polishing 200 → 1500/3000 grit", "Stain guard"],
-    gallery: [polish1, polish2, polish3],
+      "Concrete grinding and densification delivering a durable, matt-finish floor through a controlled 3-step process.",
+    scope: [
+      "Surface cleaning",
+      "Surface poured with lithium silicate densifier",
+      "Grinding the surface with floor hardener for matt finish",
+    ],
+    process: {
+      title: "3 Steps Process",
+      steps: [
+        "Surface cleaning",
+        "Surface poured with lithium silicate densifier",
+        "Grinding the surface with floor hardener for matt finish",
+      ],
+    },
+    gallery: [concreteGrindingDensification.url, polish2, polish3],
   },
   {
     slug: "concrete-polishing-manufacturing",
