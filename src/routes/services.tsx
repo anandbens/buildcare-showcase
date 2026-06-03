@@ -74,12 +74,11 @@ const SERVICE_DETAILS: Record<string, { intro: string; bullets: string[] }> = {
   },
   "Concrete Polishing": {
     intro:
-      "Multi-step diamond polishing with densifiers and guards delivering durable, dust-free, low-maintenance concrete finishes.",
+      "Concrete grinding and densification delivering a durable, matt-finish floor through a controlled 3-step process.",
     bullets: [
-      "8-step diamond polishing",
-      "Lithium silicate densifiers",
-      "Stain guard topcoats",
-      "Honed to high-gloss finishes",
+      "Surface cleaning",
+      "Surface poured with lithium silicate densifier",
+      "Grinding the surface with floor hardener for matt finish",
     ],
   },
   "Concrete Grinding & Polishing": {
