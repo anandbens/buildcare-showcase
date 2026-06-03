@@ -91,12 +91,6 @@ function ClientsPage() {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl fade-in-up">
-            <StatCard icon={Users} value={`${CLIENTS.length}+`} label="Happy Clients" />
-            <StatCard icon={Factory} value={`${sectors.length}+`} label="Industries Served" />
-            <StatCard icon={Repeat} value="92%" label="Client Retention" />
-          </div>
         </div>
       </section>
 
