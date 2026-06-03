@@ -30,6 +30,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [service, setService] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const open: EnquiryCtx["open"] = (preset) => {
     setSubmitted(false);
@@ -38,10 +39,31 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   };
   const close = () => setIsOpen(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setIsOpen(false), 2200);
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/sendmail.php", {
+        method: "POST",
+        body: formData,
+      });
+      const text = await response.text();
+
+      if (text.includes("Message Sent")) {
+        setSubmitted(true);
+        setTimeout(() => setIsOpen(false), 2000);
+      } else {
+        alert(text);
+      }
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
