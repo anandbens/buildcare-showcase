@@ -87,17 +87,19 @@ function ProjectDetail() {
               <CarouselNext className="right-4" />
             </Carousel>
 
-            <div>
-              <h2 className="text-2xl font-bold">Scope of work</h2>
-              <ul className="mt-5 space-y-3">
-                {project.scope.map((s) => (
-                  <li key={s} className="flex gap-3 text-sm">
-                    <Check className="h-5 w-5 text-brand shrink-0" />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {project.slug !== "concrete-polishing-showroom" && (
+              <div>
+                <h2 className="text-2xl font-bold">Scope of work</h2>
+                <ul className="mt-5 space-y-3">
+                  {project.scope.map((s) => (
+                    <li key={s} className="flex gap-3 text-sm">
+                      <Check className="h-5 w-5 text-brand shrink-0" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {project.process && (
               <div>
